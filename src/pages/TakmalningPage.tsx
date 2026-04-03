@@ -74,7 +74,7 @@ const TakmalningPage = () => {
             </div>
 
             <div className="space-y-6">
-              <img src="https://images.pexels.com/photos/1917849/pexels-photo-1917849.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Takmålning resultat" className="w-full rounded-2xl" />
+              <img src="https://images.pexels.com/photos/994164/pexels-photo-994164.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Takmålning resultat" className="w-full rounded-2xl" />
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-orange-50 rounded-xl p-5 text-center">
                   <p className="text-2xl font-bold text-gray-900">10 år</p>

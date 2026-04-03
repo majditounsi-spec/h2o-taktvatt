@@ -17,7 +17,7 @@ const About = () => {
             <div className="grid grid-cols-12 gap-4">
               <div className="col-span-7">
                 <img
-                  src="https://images.pexels.com/photos/8961251/pexels-photo-8961251.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  src="https://images.pexels.com/photos/3990359/pexels-photo-3990359.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt="Professionell taktvätt pågår"
                   className="w-full h-80 object-cover rounded-2xl"
                 />
@@ -29,7 +29,7 @@ const About = () => {
                   className="w-full h-[calc(50%-8px)] object-cover rounded-2xl"
                 />
                 <img
-                  src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  src="https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=400"
                   alt="Modern fasad"
                   className="w-full h-[calc(50%-8px)] object-cover rounded-2xl"
                 />

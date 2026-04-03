@@ -74,7 +74,7 @@ const FasadtvattPage = () => {
             </div>
 
             <div className="space-y-6">
-              <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ren fasad" className="w-full rounded-2xl" />
+              <img src="https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ren fasad" className="w-full rounded-2xl" />
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-blue-50 rounded-xl p-5 text-center">
                   <p className="text-2xl font-bold text-gray-900">Garanti</p>

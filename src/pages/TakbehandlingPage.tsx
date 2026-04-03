@@ -75,7 +75,7 @@ const TakbehandlingPage = () => {
             </div>
 
             <div className="space-y-6">
-              <img src="https://images.pexels.com/photos/5401232/pexels-photo-5401232.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Takpannor" className="w-full rounded-2xl" />
+              <img src="https://images.pexels.com/photos/16208002/pexels-photo-16208002.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Takpannor" className="w-full rounded-2xl" />
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-orange-50 rounded-xl p-5 text-center">
                   <p className="text-2xl font-bold text-gray-900">5+ år</p>
