@@ -1,48 +1,45 @@
-import { Droplets, Paintbrush, Building2, SprayCan, ArrowRight } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
+import { RoofWashIcon, RoofPaintIcon, FacadeWashIcon, RoofShieldIcon } from "./ServiceIcons";
 
 const services = [
   {
-    icon: Droplets,
+    icon: RoofWashIcon,
     title: "Taktvätt",
-    description:
-      "Professionell högtryckstvätt som tar bort mossa, lav, alger och smuts. Vi skyddar din fastighet med plastövertäckning under hela processen.",
-    features: ["Högtryckstvätt", "Mossbehandling", "Algborttagning", "Skyddande plastning"],
+    description: "Professionell högtryckstvätt som tar bort mossa, lav och alger. Skyddande plastning under hela processen.",
+    features: ["Högtryckstvätt", "Mossbehandling", "Algborttagning"],
     price: "Från 15 000 kr",
-    image: "https://images.unsplash.com/photo-1625766763788-95ed44a1e7b4?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.pexels.com/photos/8961251/pexels-photo-8961251.jpeg?auto=compress&cs=tinysrgb&w=600",
     accent: "blue",
     link: "/taktvatt",
   },
   {
-    icon: Paintbrush,
+    icon: RoofPaintIcon,
     title: "Takmålning",
-    description:
-      "Högkvalitativ takfärg som ger ett vackert resultat och skyddar pannorna mot väder och vind. 10 års garanti på takfärgen.",
-    features: ["10 års garanti", "UV-beständig färg", "Professionellt resultat", "Förlänger livslängden"],
+    description: "UV-beständig takfärg som skyddar betongpannor i minst 10 år. Vackert, hållbart resultat.",
+    features: ["10 års garanti", "UV-beständig", "Valfri kulör"],
     price: "Från 30 000 kr",
-    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.pexels.com/photos/7031407/pexels-photo-7031407.jpeg?auto=compress&cs=tinysrgb&w=600",
     accent: "orange",
     link: "/takmalning",
   },
   {
-    icon: Building2,
+    icon: FacadeWashIcon,
     title: "Fasadtvätt",
-    description:
-      "Skonsam rengöring av alla fasadtyper – puts, trä, tegel och plåt. Tar bort smuts, alger och missfärgningar effektivt.",
-    features: ["Skonsam rengöring", "Alla fasadtyper", "Algbehandling", "Fräscht utseende"],
+    description: "Skonsam rengöring av alla fasadtyper. Puts, trä, tegel och plåt – anpassad teknik per material.",
+    features: ["Alla fasadtyper", "Skonsam teknik", "Algbehandling"],
     price: "Från 12 000 kr",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=600",
     accent: "blue",
     link: "/fasadtvatt",
   },
   {
-    icon: SprayCan,
+    icon: RoofShieldIcon,
     title: "Takbehandling",
-    description:
-      "Professionell impregnering som förhindrar mossbildning och förlänger takets livslängd avsevärt. Rekommenderas efter ca 15 år.",
-    features: ["Förhindrar mossa", "Vattenavvisande", "Miljövänligt", "Lång hållbarhet"],
+    description: "Professionell impregnering som förhindrar mossbildning och vatteninträngning. Förlänger takets livslängd.",
+    features: ["Vattenavvisande", "Miljövänligt", "Lång hållbarhet"],
     price: "Från 10 000 kr",
-    image: "https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?auto=format&fit=crop&w=600&q=80",
+    image: "https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=600",
     accent: "orange",
     link: "/takbehandling",
   },
@@ -50,81 +47,61 @@ const services = [
 
 const Services = () => {
   return (
-    <section id="tjanster" className="py-24 md:py-32 bg-gray-50">
+    <section id="tjanster" className="py-24 md:py-32 bg-[#fafaf8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section header */}
-        <div className="text-center max-w-2xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-full px-4 py-2 mb-6">
-            <span className="w-2 h-2 rounded-full bg-orange-500" />
-            <span className="text-sm font-semibold text-blue-700">Våra tjänster</span>
-          </div>
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-5 tracking-tight">
-            Komplett takvård för{" "}
-            <span className="text-gradient-orange">din fastighet</span>
+        <div className="text-center max-w-xl mx-auto mb-16">
+          <p className="text-sm font-semibold text-orange-500 uppercase tracking-widest mb-3">Våra tjänster</p>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
+            Komplett takvård
           </h2>
-          <p className="text-lg text-gray-500 leading-relaxed">
-            Allt inom takvård – från tvätt och behandling till målning och impregnering.
-            Certifierad personal och kvalitetsgaranti.
+          <p className="text-gray-400 leading-relaxed">
+            Tvätt, målning, impregnering och fasadtvätt – allt under ett tak.
           </p>
         </div>
 
-        {/* Service cards */}
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-2 gap-6">
           {services.map((service) => (
-            <div
+            <Link
               key={service.title}
-              className="group bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 border border-gray-100 hover:border-gray-200"
+              to={service.link}
+              className="group bg-white rounded-2xl overflow-hidden border border-gray-100 hover:border-gray-200 shadow-card hover:shadow-card-hover transition-all duration-500"
             >
-              {/* Image */}
-              <div className="relative h-52 overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
                 <img
                   src={service.image}
                   alt={service.title}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-                <div className={`absolute top-4 left-4 w-12 h-12 rounded-2xl flex items-center justify-center ${
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                <div className={`absolute top-4 left-4 w-10 h-10 rounded-xl flex items-center justify-center ${
                   service.accent === "orange" ? "bg-orange-500" : "bg-blue-600"
-                } shadow-lg`}>
-                  <service.icon className="w-6 h-6 text-white" />
+                }`}>
+                  <service.icon className="w-5 h-5 text-white" />
                 </div>
-                <div className="absolute bottom-4 right-4">
-                  <span className="bg-white/95 backdrop-blur-sm text-gray-900 font-bold text-sm px-4 py-2 rounded-xl">
-                    {service.price}
-                  </span>
-                </div>
+                <span className="absolute bottom-4 right-4 bg-white/95 text-gray-900 font-semibold text-sm px-3 py-1.5 rounded-lg">
+                  {service.price}
+                </span>
               </div>
 
-              {/* Content */}
-              <div className="p-7">
-                <h3 className="text-2xl font-extrabold text-gray-900 mb-3">{service.title}</h3>
-                <p className="text-gray-500 mb-5 leading-relaxed">{service.description}</p>
+              <div className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-2">{service.title}</h3>
+                <p className="text-gray-400 text-sm mb-4 leading-relaxed">{service.description}</p>
 
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {service.features.map((feature) => (
-                    <span
-                      key={feature}
-                      className={`text-xs font-semibold px-3 py-1.5 rounded-lg ${
-                        service.accent === "orange"
-                          ? "bg-orange-50 text-orange-700"
-                          : "bg-blue-50 text-blue-700"
-                      }`}
-                    >
-                      {feature}
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {service.features.map((f) => (
+                    <span key={f} className="text-xs font-medium px-2.5 py-1 rounded-md bg-gray-50 text-gray-500">
+                      {f}
                     </span>
                   ))}
                 </div>
 
-                <Link
-                  to={service.link}
-                  className={`inline-flex items-center text-sm font-bold gap-2 hover:gap-3 transition-all ${
-                    service.accent === "orange" ? "text-orange-500 hover:text-orange-600" : "text-blue-600 hover:text-blue-700"
-                  }`}
-                >
+                <span className={`inline-flex items-center text-sm font-semibold gap-2 group-hover:gap-3 transition-all ${
+                  service.accent === "orange" ? "text-orange-500" : "text-blue-600"
+                }`}>
                   Läs mer <ArrowRight className="w-4 h-4" />
-                </Link>
+                </span>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

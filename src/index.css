@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 220 25% 10%;
+    --background: 40 20% 99%;
+    --foreground: 220 20% 12%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 25% 10%;
+    --card-foreground: 220 20% 12%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 25% 10%;
+    --popover-foreground: 220 20% 12%;
 
-    --primary: 215 90% 45%;
+    --primary: 212 80% 42%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 25 95% 55%;
+    --secondary: 24 90% 52%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 215 20% 96%;
-    --muted-foreground: 215 15% 45%;
+    --muted: 40 15% 96%;
+    --muted-foreground: 220 10% 48%;
 
-    --accent: 215 90% 95%;
-    --accent-foreground: 215 90% 35%;
+    --accent: 212 60% 95%;
+    --accent-foreground: 212 80% 35%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 90%;
-    --input: 220 13% 90%;
-    --ring: 215 90% 45%;
+    --border: 40 10% 90%;
+    --input: 40 10% 90%;
+    --ring: 212 80% 42%;
 
     --radius: 0.75rem;
   }
@@ -48,8 +48,8 @@
 
   h1, h2, h3 {
     font-family: 'Inter', -apple-system, sans-serif;
-    font-weight: 800;
-    letter-spacing: -0.02em;
+    font-weight: 700;
+    letter-spacing: -0.025em;
   }
 }
 
@@ -59,15 +59,15 @@ html {
 
 @layer utilities {
   .shadow-card {
-    box-shadow: 0 1px 3px 0 hsl(220 30% 15% / 0.05), 0 1px 2px -1px hsl(220 30% 15% / 0.05);
+    box-shadow: 0 1px 4px 0 hsl(220 20% 12% / 0.04), 0 1px 2px -1px hsl(220 20% 12% / 0.03);
   }
   .shadow-card-hover {
-    box-shadow: 0 20px 60px 0 hsl(220 30% 15% / 0.1), 0 8px 20px -4px hsl(220 30% 15% / 0.08);
+    box-shadow: 0 16px 48px 0 hsl(220 20% 12% / 0.08), 0 6px 16px -2px hsl(220 20% 12% / 0.06);
   }
   .text-gradient-blue {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#1a6fc4] to-[#2196f3];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#1565C0] to-[#1E88E5];
   }
   .text-gradient-orange {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#f57c00] to-[#ff9800];
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#E65100] to-[#F57C00];
   }
 }
