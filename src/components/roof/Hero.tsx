@@ -8,7 +8,7 @@ const Hero = () => {
       {/* Background image - professional roof cleaning */}
       <div className="absolute inset-0">
         <img
-          src="https://images.pexels.com/photos/2079246/pexels-photo-2079246.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          src="https://images.pexels.com/photos/8961251/pexels-photo-8961251.jpeg?auto=compress&cs=tinysrgb&w=1920"
           alt="Professionell taktvätt med högtryckstvätt"
           className="w-full h-full object-cover"
         />
