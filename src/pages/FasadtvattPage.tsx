@@ -1,34 +1,35 @@
 import Header from "@/components/roof/Header";
 import Footer from "@/components/roof/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Shield, Building2, Clock } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { FacadeWashIcon } from "@/components/roof/ServiceIcons";
 
 const FasadtvattPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
 
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28">
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=2000&q=80" alt="Fasadtvätt" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/85 to-[#0a1628]/70" />
+          <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Husfasad" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0c1a2e]/95 via-[#0c1a2e]/80 to-[#0c1a2e]/60" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-blue-500/15 border border-blue-500/30 rounded-full px-4 py-2 mb-6">
-              <Building2 className="w-4 h-4 text-blue-400" />
-              <span className="text-sm font-semibold text-blue-300">Professionell fasadtvätt</span>
+            <div className="inline-flex items-center gap-2 bg-blue-500/15 border border-blue-500/25 rounded-full px-4 py-2 mb-6">
+              <FacadeWashIcon className="w-4 h-4 text-blue-400" />
+              <span className="text-sm font-medium text-blue-300">Fasadtvätt</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
-              Fasadtvätt för ett <span className="text-gradient-orange">fräscht hus</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+              Fasadtvätt som förnyar hela huset
             </h1>
-            <p className="text-lg text-blue-100/70 mb-8 leading-relaxed">
-              Skonsam rengöring av alla fasadtyper. Vi tar bort smuts, alger och
-              missfärgningar utan att skada materialet.
+            <p className="text-lg text-white/60 mb-8 leading-relaxed max-w-lg">
+              Alger, smuts och mögel gör att huset ser slitet ut i förtid. En fasadtvätt
+              gör enorm skillnad – huset ser nymålat ut igen.
             </p>
-            <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-2xl px-8 py-7 shadow-lg shadow-orange-500/25">
-              <Link to="/kontakt">Begär offert – från 12 000 kr <ArrowRight className="ml-2 w-5 h-5" /></Link>
+            <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-xl px-7 py-6">
+              <Link to="/kontakt">Begär offert – från 12 000 kr <ArrowRight className="ml-2 w-4 h-4" /></Link>
             </Button>
           </div>
         </div>
@@ -38,43 +39,50 @@ const FasadtvattPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6">Alla typer av fasader</h2>
-              <p className="text-gray-500 mb-6 leading-relaxed">
-                Oavsett om din fastighet har puts, trä, tegel eller plåtfasad anpassar vi
-                metod och tryck för bästa resultat utan risk för skador.
+              <h2 className="text-3xl font-bold text-gray-900 mb-6 tracking-tight">Skonsam tvätt för alla fasadtyper</h2>
+              <p className="text-gray-500 mb-5 leading-relaxed">
+                Oavsett om ditt hus har puts, trä, tegel eller plåt anpassar vi metod och tryck
+                efter materialet. Vi vill aldrig riskera att skada fasaden – bara göra den ren.
+              </p>
+              <p className="text-gray-500 mb-5 leading-relaxed">
+                Gröna alger och svarta mögelfläckar på fasaden handlar sällan om att färgen är
+                dålig. Det beror oftast på fukt och väderstreck. Norrfasader och skuggiga sidor
+                drabbas mest. En fasadtvätt tar bort allt och efterbehandlingen gör att det
+                dröjer betydligt längre innan det kommer tillbaka.
               </p>
               <p className="text-gray-500 mb-8 leading-relaxed">
-                Vi kombinerar gärna fasadtvätt med taktvätt för ett helhetsresultat som
-                förnyar hela husets utseende. Fråga om paketpris!
+                Många av våra kunder i Kalmar län kombinerar fasadtvätt med taktvätt. Då gör
+                vi allt på samma gång och du får paketpris.
               </p>
-              <div className="space-y-4">
+
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Vi tvättar alla material</h3>
+              <div className="grid sm:grid-cols-2 gap-3">
                 {[
-                  "Puts, trä, tegel och plåtfasader",
-                  "Skonsam teknik anpassad per material",
-                  "Algbehandling som förhindrar återväxt",
-                  "Kombinera med taktvätt – paketpris!",
-                  "Miljövänliga rengöringsmedel",
-                  "Snabbt genomförande",
+                  "Putsfasad",
+                  "Träpanel",
+                  "Tegelfasad",
+                  "Plåtfasad",
+                  "Eternit",
+                  "Fibercementskivor",
                 ].map((item) => (
                   <div key={item} className="flex items-center gap-3">
                     <CheckCircle className="w-5 h-5 text-blue-600 shrink-0" />
-                    <span className="text-gray-700 font-medium">{item}</span>
+                    <span className="text-gray-600">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
+
             <div className="space-y-6">
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80" alt="Fasad" className="w-full rounded-3xl shadow-lg" />
-              <div className="grid grid-cols-2 gap-6">
-                <div className="bg-blue-50 rounded-2xl p-6 text-center">
-                  <Shield className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-                  <p className="text-2xl font-extrabold text-gray-900">Garanti</p>
+              <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Ren fasad" className="w-full rounded-2xl" />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-blue-50 rounded-xl p-5 text-center">
+                  <p className="text-2xl font-bold text-gray-900">Garanti</p>
                   <p className="text-sm text-gray-500">På allt arbete</p>
                 </div>
-                <div className="bg-orange-50 rounded-2xl p-6 text-center">
-                  <Clock className="w-8 h-8 text-orange-500 mx-auto mb-2" />
-                  <p className="text-2xl font-extrabold text-gray-900">1 dag</p>
-                  <p className="text-sm text-gray-500">Genomförande</p>
+                <div className="bg-orange-50 rounded-xl p-5 text-center">
+                  <p className="text-2xl font-bold text-gray-900">1 dag</p>
+                  <p className="text-sm text-gray-500">Normalt genomförande</p>
                 </div>
               </div>
             </div>
@@ -82,12 +90,15 @@ const FasadtvattPage = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-blue-600">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-extrabold text-white mb-4">Förnya din fasad idag</h2>
-          <p className="text-blue-100/70 mb-8">Kostnadsfri besiktning och offert inom 24 timmar.</p>
-          <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-2xl px-10 py-7 shadow-lg">
-            <Link to="/kontakt">Kontakta oss <ArrowRight className="ml-2 w-5 h-5" /></Link>
+      <section className="py-16 bg-[#fafaf8]">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Kombinera med taktvätt – spara pengar</h2>
+          <p className="text-gray-500 mb-8 leading-relaxed">
+            Beställer du fasadtvätt och taktvätt samtidigt behöver vi bara komma ut en gång.
+            Det sparar tid för oss och pengar för dig. Be om paketpris när du kontaktar oss.
+          </p>
+          <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-xl px-8 py-6">
+            <Link to="/kontakt">Fråga om paketpris <ArrowRight className="ml-2 w-4 h-4" /></Link>
           </Button>
         </div>
       </section>

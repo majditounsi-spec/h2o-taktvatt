@@ -57,7 +57,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/">
-            <Logo className={solid ? "[&_span]:text-gray-900" : "[&_span]:text-white [&_.text-gray-400]:text-white/50 [&_.text-blue-600]:text-blue-300"} />
+            <Logo variant={solid ? "dark" : "light"} />
           </Link>
 
           {/* Desktop nav */}
@@ -68,7 +68,7 @@ const Header = () => {
                   <button
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                     className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-orange-500 ${
-                      solid ? "text-gray-600" : "text-white/80"
+                      solid ? "text-gray-600" : "text-white"
                     }`}
                   >
                     {link.label}
@@ -102,7 +102,7 @@ const Header = () => {
                   className={`text-sm font-medium transition-colors hover:text-orange-500 ${
                     location.pathname === link.href
                       ? "text-orange-500"
-                      : solid ? "text-gray-600" : "text-white/80"
+                      : solid ? "text-gray-600" : "text-white"
                   }`}
                 >
                   {link.label}

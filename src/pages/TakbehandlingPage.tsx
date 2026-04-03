@@ -1,34 +1,35 @@
 import Header from "@/components/roof/Header";
 import Footer from "@/components/roof/Footer";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, CheckCircle, Shield, SprayCan, Clock } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
+import { RoofShieldIcon } from "@/components/roof/ServiceIcons";
 
 const TakbehandlingPage = () => {
   return (
     <div className="min-h-screen">
       <Header />
 
-      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden">
+      <section className="relative pt-32 pb-20 md:pt-40 md:pb-28">
         <div className="absolute inset-0">
-          <img src="https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?auto=format&fit=crop&w=2000&q=80" alt="Takbehandling" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0a1628]/95 via-[#0a1628]/85 to-[#0a1628]/70" />
+          <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Takbehandling" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#0c1a2e]/95 via-[#0c1a2e]/80 to-[#0c1a2e]/60" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-orange-500/15 border border-orange-500/30 rounded-full px-4 py-2 mb-6">
-              <SprayCan className="w-4 h-4 text-orange-400" />
-              <span className="text-sm font-semibold text-orange-300">Takbehandling & Impregnering</span>
+            <div className="inline-flex items-center gap-2 bg-orange-500/15 border border-orange-500/25 rounded-full px-4 py-2 mb-6">
+              <RoofShieldIcon className="w-4 h-4 text-orange-400" />
+              <span className="text-sm font-medium text-orange-300">Takbehandling & Impregnering</span>
             </div>
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 tracking-tight">
-              Skydda ditt tak med <span className="text-gradient-blue">impregnering</span>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+              Förläng takets livslängd med impregnering
             </h1>
-            <p className="text-lg text-blue-100/70 mb-8 leading-relaxed">
-              Förhindra mossbildning och förläng takets livslängd med professionell
-              impregnering och takbehandling.
+            <p className="text-lg text-white/60 mb-8 leading-relaxed max-w-lg">
+              En impregnering gör taket vattenavvisande och förhindrar att mossa och
+              alger fäster. Det billigaste sättet att skydda ditt tak på lång sikt.
             </p>
-            <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-2xl px-8 py-7 shadow-lg shadow-orange-500/25">
-              <Link to="/kontakt">Begär offert – från 10 000 kr <ArrowRight className="ml-2 w-5 h-5" /></Link>
+            <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-xl px-7 py-6">
+              <Link to="/kontakt">Begär offert – från 10 000 kr <ArrowRight className="ml-2 w-4 h-4" /></Link>
             </Button>
           </div>
         </div>
@@ -38,43 +39,50 @@ const TakbehandlingPage = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-gray-900 mb-6">Förebyggande takvård</h2>
-              <p className="text-gray-500 mb-6 leading-relaxed">
-                Impregnering skapar ett vattenavvisande skydd som förhindrar att mossa, lav
-                och alger fäster på takpannorna. Det är den mest kostnadseffektiva
-                åtgärden för att förlänga takets livslängd.
+              <h2 className="text-3xl font-bold text-gray-900 mb-6 tracking-tight">Vad gör en impregnering?</h2>
+              <p className="text-gray-500 mb-5 leading-relaxed">
+                Impregnering skapar ett osynligt, vattenavvisande skikt på takpannorna. Vatten
+                pärlar av istället för att sugas in i betongen. Det gör att mossa och alger
+                inte kan fästa lika lätt, och att pannorna inte frostspricker på vintern.
+              </p>
+              <p className="text-gray-500 mb-5 leading-relaxed">
+                Vi rekommenderar impregnering som komplement till taktvätt. Du har precis
+                fått taket rent – då vill du att det ska hålla sig rent så länge som möjligt.
+                Med impregnering håller resultatet upp till dubbelt så länge.
               </p>
               <p className="text-gray-500 mb-8 leading-relaxed">
-                Vi rekommenderar impregnering efter cirka 15 år, eller direkt efter en
-                taktvätt för maximalt skydd. Vi använder enbart miljöcertifierade produkter.
+                Alla produkter vi använder är miljömärkta och godkända för svenska tak.
+                Behandlingen påverkar inte pannornas utseende – de ser likadana ut,
+                bara skyddade.
               </p>
-              <div className="space-y-4">
+
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Fördelar med impregnering</h3>
+              <div className="space-y-3">
                 {[
-                  "Vattenavvisande skyddslager",
-                  "Förhindrar mossa och algbildning",
-                  "Miljöcertifierade produkter",
-                  "Förlänger takets livslängd",
-                  "Perfekt komplement till taktvätt",
-                  "Kostnadseffektiv investering",
+                  "Taket blir vattenavvisande",
+                  "Mossa och alger fäster inte lika lätt",
+                  "Skyddar mot frostsprängning",
+                  "Förlänger tiden mellan tvättar med 50–100%",
+                  "Miljömärkta produkter",
+                  "Kan göras direkt efter taktvätt",
                 ].map((item) => (
-                  <div key={item} className="flex items-center gap-3">
-                    <CheckCircle className="w-5 h-5 text-orange-500 shrink-0" />
-                    <span className="text-gray-700 font-medium">{item}</span>
+                  <div key={item} className="flex items-start gap-3">
+                    <CheckCircle className="w-5 h-5 text-orange-500 shrink-0 mt-0.5" />
+                    <span className="text-gray-600">{item}</span>
                   </div>
                 ))}
               </div>
             </div>
+
             <div className="space-y-6">
-              <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=800&q=80" alt="Takbehandling" className="w-full rounded-3xl shadow-lg" />
-              <div className="grid grid-cols-2 gap-6">
-                <div className="bg-orange-50 rounded-2xl p-6 text-center">
-                  <Shield className="w-8 h-8 text-orange-500 mx-auto mb-2" />
-                  <p className="text-2xl font-extrabold text-gray-900">5+ år</p>
+              <img src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Takpannor" className="w-full rounded-2xl" />
+              <div className="grid grid-cols-2 gap-4">
+                <div className="bg-orange-50 rounded-xl p-5 text-center">
+                  <p className="text-2xl font-bold text-gray-900">5+ år</p>
                   <p className="text-sm text-gray-500">Skyddseffekt</p>
                 </div>
-                <div className="bg-blue-50 rounded-2xl p-6 text-center">
-                  <Clock className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-                  <p className="text-2xl font-extrabold text-gray-900">1 dag</p>
+                <div className="bg-blue-50 rounded-xl p-5 text-center">
+                  <p className="text-2xl font-bold text-gray-900">½ dag</p>
                   <p className="text-sm text-gray-500">Genomförande</p>
                 </div>
               </div>
@@ -83,12 +91,15 @@ const TakbehandlingPage = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-orange-500">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-3xl font-extrabold text-white mb-4">Skydda ditt tak idag</h2>
-          <p className="text-orange-100/80 mb-8">Kostnadsfri besiktning och offert inom 24 timmar.</p>
-          <Button asChild size="lg" className="bg-white text-orange-600 hover:bg-orange-50 rounded-2xl px-10 py-7 font-bold shadow-lg">
-            <Link to="/kontakt">Kontakta oss <ArrowRight className="ml-2 w-5 h-5" /></Link>
+      <section className="py-16 bg-[#fafaf8]">
+        <div className="max-w-3xl mx-auto px-4 text-center">
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Bäst tillsammans med taktvätt</h2>
+          <p className="text-gray-500 mb-8 leading-relaxed">
+            Beställer du impregnering samtidigt som taktvätt slipper du ett extra besök.
+            Vi applicerar impregneringen direkt efter att taket torkat – enklare blir det inte.
+          </p>
+          <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-xl px-8 py-6">
+            <Link to="/kontakt">Begär offert <ArrowRight className="ml-2 w-4 h-4" /></Link>
           </Button>
         </div>
       </section>

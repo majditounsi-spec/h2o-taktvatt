@@ -84,7 +84,7 @@ const Hero = () => {
                   </svg>
                 ))}
               </div>
-              <span className="ml-1">4.9 betyg</span>
+              <span className="ml-1">4.7 betyg</span>
             </div>
           </div>
         </div>

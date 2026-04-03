@@ -1,53 +1,29 @@
-const Logo = ({ className = "", size = "default" }: { className?: string; size?: "default" | "large" }) => {
-  const w = size === "large" ? 56 : 44;
-  const h = size === "large" ? 56 : 44;
+const Logo = ({ variant = "dark" }: { variant?: "dark" | "light"; className?: string }) => {
+  const textColor = variant === "light" ? "#ffffff" : "#111827";
+  const subColor = variant === "light" ? "rgba(255,255,255,0.5)" : "#9CA3AF";
 
   return (
-    <div className={`flex items-center gap-3 ${className}`}>
-      <svg width={w} height={h} viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
-        {/* Background */}
-        <rect width="56" height="56" rx="14" fill="url(#logo-gradient)" />
-
-        {/* Roof / house shape */}
-        <path d="M28 12L12 26H18V40H38V26H44L28 12Z" fill="white" fillOpacity="0.15" />
-
-        {/* Water droplet */}
-        <path
-          d="M28 18C28 18 21 27 21 31.5C21 35.36 24.13 38.5 28 38.5C31.87 38.5 35 35.36 35 31.5C35 27 28 18 28 18Z"
-          fill="white"
-          fillOpacity="0.95"
-        />
-
-        {/* Water wave lines inside droplet */}
-        <path
-          d="M23.5 32C24.5 30.5 26 31.5 28 30.5C30 29.5 31.5 30.5 32.5 32"
-          stroke="url(#logo-gradient)"
-          strokeWidth="1.8"
-          strokeLinecap="round"
-          fill="none"
-        />
-        <path
-          d="M24 34.5C25 33 26.5 34 28.5 33C30.5 32 32 33 33 34.5"
-          stroke="url(#logo-gradient)"
-          strokeWidth="1.5"
-          strokeLinecap="round"
-          fill="none"
-        />
-
+    <div className="flex items-center gap-3">
+      {/* Mark */}
+      <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" className="shrink-0">
+        <rect width="40" height="40" rx="10" fill="url(#logo-g)" />
+        <path d="M20 8C20 8 13 17 13 21.5C13 25.5 16.1 28.8 20 28.8C23.9 28.8 27 25.5 27 21.5C27 17 20 8 20 8Z" fill="white" />
+        <path d="M20 14.5L15 19.5H17V24H23V19.5H25L20 14.5Z" fill="#1565C0" fillOpacity="0.8" />
         <defs>
-          <linearGradient id="logo-gradient" x1="0" y1="0" x2="56" y2="56">
+          <linearGradient id="logo-g" x1="0" y1="0" x2="40" y2="40">
             <stop offset="0%" stopColor="#1565C0" />
             <stop offset="100%" stopColor="#0D47A1" />
           </linearGradient>
         </defs>
       </svg>
 
-      <div className="flex flex-col">
-        <span className="font-extrabold text-lg leading-tight tracking-tight">
-          H2O <span className="font-bold text-blue-600">Tak</span>
+      {/* Text */}
+      <div className="flex flex-col leading-tight">
+        <span style={{ color: textColor, fontSize: "17px", fontWeight: 800, letterSpacing: "-0.5px", fontFamily: "Inter, system-ui, sans-serif" }}>
+          H2O <span style={{ color: "#F57C00", fontWeight: 800 }}>Tak</span>
         </span>
-        <span className="text-[11px] font-medium text-gray-400 tracking-wide uppercase">
-          Taktvätt & Takmålning
+        <span style={{ color: subColor, fontSize: "10px", fontWeight: 600, letterSpacing: "1.5px", fontFamily: "Inter, system-ui, sans-serif", textTransform: "uppercase" as const }}>
+          Taktvätt & Målning
         </span>
       </div>
     </div>
