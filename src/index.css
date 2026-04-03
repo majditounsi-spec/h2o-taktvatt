@@ -4,33 +4,33 @@
 
 @layer base {
   :root {
-    --background: 210 20% 98%;
-    --foreground: 215 25% 15%;
+    --background: 0 0% 100%;
+    --foreground: 220 25% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 215 25% 15%;
+    --card-foreground: 220 25% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 25% 15%;
+    --popover-foreground: 220 25% 10%;
 
-    --primary: 199 89% 38%;
+    --primary: 215 90% 45%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 152 60% 42%;
+    --secondary: 25 95% 55%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 210 20% 96%;
-    --muted-foreground: 215 15% 50%;
+    --muted: 215 20% 96%;
+    --muted-foreground: 215 15% 45%;
 
-    --accent: 199 89% 95%;
-    --accent-foreground: 199 89% 30%;
+    --accent: 215 90% 95%;
+    --accent-foreground: 215 90% 35%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 199 89% 38%;
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 215 90% 45%;
 
     --radius: 0.75rem;
   }
@@ -47,7 +47,9 @@
   }
 
   h1, h2, h3 {
-    font-family: 'Playfair Display', Georgia, serif;
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-weight: 800;
+    letter-spacing: -0.02em;
   }
 }
 
@@ -57,12 +59,15 @@ html {
 
 @layer utilities {
   .shadow-card {
-    box-shadow: 0 1px 3px 0 hsl(220 30% 15% / 0.06), 0 1px 2px -1px hsl(220 30% 15% / 0.06);
+    box-shadow: 0 1px 3px 0 hsl(220 30% 15% / 0.05), 0 1px 2px -1px hsl(220 30% 15% / 0.05);
   }
   .shadow-card-hover {
-    box-shadow: 0 10px 40px 0 hsl(220 30% 15% / 0.1), 0 4px 12px -2px hsl(220 30% 15% / 0.08);
+    box-shadow: 0 20px 60px 0 hsl(220 30% 15% / 0.1), 0 8px 20px -4px hsl(220 30% 15% / 0.08);
   }
-  .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(199,89%,38%)] to-[hsl(152,60%,42%)];
+  .text-gradient-blue {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#1a6fc4] to-[#2196f3];
+  }
+  .text-gradient-orange {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[#f57c00] to-[#ff9800];
   }
 }

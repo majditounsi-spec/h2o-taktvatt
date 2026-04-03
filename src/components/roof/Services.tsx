@@ -1,113 +1,125 @@
 import { Droplets, Paintbrush, Building2, SprayCan, ArrowRight } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
 
 const services = [
   {
     icon: Droplets,
     title: "Taktvätt",
     description:
-      "Professionell högtryckstvätt av tak som tar bort mossa, lav, alger och smuts. Vi skyddar din fastighet med plastövertäckning och monterar slangar vid stuprör för att förhindra stopp i avloppet.",
+      "Professionell högtryckstvätt som tar bort mossa, lav, alger och smuts. Vi skyddar din fastighet med plastövertäckning under hela processen.",
     features: ["Högtryckstvätt", "Mossbehandling", "Algborttagning", "Skyddande plastning"],
     price: "Från 15 000 kr",
-    color: "from-blue-500 to-cyan-500",
-    bgColor: "bg-blue-50",
+    image: "https://images.unsplash.com/photo-1625766763788-95ed44a1e7b4?auto=format&fit=crop&w=600&q=80",
+    accent: "blue",
   },
   {
     icon: Paintbrush,
     title: "Takmålning",
     description:
-      "Vi målar ditt tak med högkvalitativ takfärg som ger ett vackert resultat och skyddar betongpannorna mot väder och vind. 10 års garanti på takfärgen.",
-    features: ["10 års garanti", "UV-beständig färg", "Professionellt resultat", "Förlänger takets livslängd"],
+      "Högkvalitativ takfärg som ger ett vackert resultat och skyddar pannorna mot väder och vind. 10 års garanti på takfärgen.",
+    features: ["10 års garanti", "UV-beständig färg", "Professionellt resultat", "Förlänger livslängden"],
     price: "Från 30 000 kr",
-    color: "from-emerald-500 to-teal-500",
-    bgColor: "bg-emerald-50",
+    image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
+    accent: "orange",
   },
   {
     icon: Building2,
     title: "Fasadtvätt",
     description:
-      "Rengöring av fasader med skonsam teknik som tar bort smuts, alger och missfärgningar. Passar alla typer av fasadmaterial – puts, trä, tegel och plåt.",
+      "Skonsam rengöring av alla fasadtyper – puts, trä, tegel och plåt. Tar bort smuts, alger och missfärgningar effektivt.",
     features: ["Skonsam rengöring", "Alla fasadtyper", "Algbehandling", "Fräscht utseende"],
     price: "Från 12 000 kr",
-    color: "from-amber-500 to-orange-500",
-    bgColor: "bg-amber-50",
+    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80",
+    accent: "blue",
   },
   {
     icon: SprayCan,
-    title: "Takbehandling & Impregnering",
+    title: "Takbehandling",
     description:
-      "Skydda ditt tak med professionell impregnering som förhindrar mossbildning och förlänger takets livslängd avsevärt. Rekommenderas efter ca 15 år.",
-    features: ["Förhindrar mossa", "Vattenavvisande", "Förlänger livslängden", "Miljövänliga produkter"],
+      "Professionell impregnering som förhindrar mossbildning och förlänger takets livslängd avsevärt. Rekommenderas efter ca 15 år.",
+    features: ["Förhindrar mossa", "Vattenavvisande", "Miljövänligt", "Lång hållbarhet"],
     price: "Från 10 000 kr",
-    color: "from-purple-500 to-violet-500",
-    bgColor: "bg-purple-50",
+    image: "https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?auto=format&fit=crop&w=600&q=80",
+    accent: "orange",
   },
 ];
 
 const Services = () => {
   return (
-    <section id="tjanster" className="py-20 md:py-28">
+    <section id="tjanster" className="py-24 md:py-32 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-sm font-semibold text-primary uppercase tracking-wider" style={{ fontFamily: 'Inter, sans-serif' }}>
-            Våra tjänster
-          </span>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mt-3 mb-5">
-            Komplett takvård för din fastighet
+        <div className="text-center max-w-2xl mx-auto mb-20">
+          <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-100 rounded-full px-4 py-2 mb-6">
+            <span className="w-2 h-2 rounded-full bg-orange-500" />
+            <span className="text-sm font-semibold text-blue-700">Våra tjänster</span>
+          </div>
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-5 tracking-tight">
+            Komplett takvård för{" "}
+            <span className="text-gradient-orange">din fastighet</span>
           </h2>
-          <p className="text-lg text-muted-foreground" style={{ fontFamily: 'Inter, sans-serif' }}>
-            Vi erbjuder allt inom takvård – från tvätt och behandling till målning och impregnering.
-            Alla tjänster utförs av certifierad personal med kvalitetsgaranti.
+          <p className="text-lg text-gray-500 leading-relaxed">
+            Allt inom takvård – från tvätt och behandling till målning och impregnering.
+            Certifierad personal och kvalitetsgaranti.
           </p>
         </div>
 
         {/* Service cards */}
-        <div className="grid md:grid-cols-2 gap-6 lg:gap-8">
+        <div className="grid md:grid-cols-2 gap-8">
           {services.map((service) => (
-            <Card
+            <div
               key={service.title}
-              className="group border-0 shadow-card hover:shadow-card-hover transition-all duration-300 overflow-hidden"
+              className="group bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all duration-500 border border-gray-100 hover:border-gray-200"
             >
-              <CardContent className="p-8">
-                <div className="flex items-start gap-5">
-                  <div className={`${service.bgColor} p-3 rounded-xl shrink-0`}>
-                    <service.icon className="w-7 h-7 text-foreground/80" />
-                  </div>
-                  <div className="flex-1">
-                    <h3 className="text-xl font-bold text-foreground mb-2">{service.title}</h3>
-                    <p className="text-muted-foreground mb-4 leading-relaxed" style={{ fontFamily: 'Inter, sans-serif' }}>
-                      {service.description}
-                    </p>
-
-                    <div className="flex flex-wrap gap-2 mb-5">
-                      {service.features.map((feature) => (
-                        <span
-                          key={feature}
-                          className="text-xs font-medium bg-muted text-muted-foreground px-3 py-1 rounded-full"
-                          style={{ fontFamily: 'Inter, sans-serif' }}
-                        >
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-
-                    <div className="flex items-center justify-between">
-                      <span className="text-lg font-bold text-foreground" style={{ fontFamily: 'Inter, sans-serif' }}>
-                        {service.price}
-                      </span>
-                      <a
-                        href="#kontakt"
-                        className="inline-flex items-center text-sm font-semibold text-primary hover:gap-3 gap-1 transition-all"
-                        style={{ fontFamily: 'Inter, sans-serif' }}
-                      >
-                        Begär offert <ArrowRight className="w-4 h-4" />
-                      </a>
-                    </div>
-                  </div>
+              {/* Image */}
+              <div className="relative h-52 overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                <div className={`absolute top-4 left-4 w-12 h-12 rounded-2xl flex items-center justify-center ${
+                  service.accent === "orange" ? "bg-orange-500" : "bg-blue-600"
+                } shadow-lg`}>
+                  <service.icon className="w-6 h-6 text-white" />
                 </div>
-              </CardContent>
-            </Card>
+                <div className="absolute bottom-4 right-4">
+                  <span className="bg-white/95 backdrop-blur-sm text-gray-900 font-bold text-sm px-4 py-2 rounded-xl">
+                    {service.price}
+                  </span>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-7">
+                <h3 className="text-2xl font-extrabold text-gray-900 mb-3">{service.title}</h3>
+                <p className="text-gray-500 mb-5 leading-relaxed">{service.description}</p>
+
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {service.features.map((feature) => (
+                    <span
+                      key={feature}
+                      className={`text-xs font-semibold px-3 py-1.5 rounded-lg ${
+                        service.accent === "orange"
+                          ? "bg-orange-50 text-orange-700"
+                          : "bg-blue-50 text-blue-700"
+                      }`}
+                    >
+                      {feature}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href="#kontakt"
+                  className={`inline-flex items-center text-sm font-bold gap-2 hover:gap-3 transition-all ${
+                    service.accent === "orange" ? "text-orange-500 hover:text-orange-600" : "text-blue-600 hover:text-blue-700"
+                  }`}
+                >
+                  Begär offert <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
           ))}
         </div>
       </div>
