@@ -13,7 +13,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/agency360-clone">
         <Routes>
           <Route path="/" element={<RoofLanding />} />
           <Route path="*" element={<NotFound />} />
