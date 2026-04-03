@@ -1,4 +1,14 @@
 import { Phone, Mail, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const serviceFooterLinks = [
+  { label: "Taktvätt", to: "/taktvatt" },
+  { label: "Takmålning", to: "/takmalning" },
+  { label: "Fasadtvätt", to: "/fasadtvatt" },
+  { label: "Takbehandling", to: "/takbehandling" },
+  { label: "Impregnering", to: "/takbehandling" },
+  { label: "Mossbehandling", to: "/taktvatt" },
+];
 
 const Footer = () => {
   return (
@@ -23,9 +33,9 @@ const Footer = () => {
           <div>
             <h4 className="font-bold text-sm uppercase tracking-wider text-white mb-5">Tjänster</h4>
             <ul className="space-y-3">
-              {["Taktvätt", "Takmålning", "Fasadtvätt", "Takbehandling", "Impregnering", "Mossbehandling"].map((s) => (
-                <li key={s}>
-                  <a href="#tjanster" className="text-blue-200/50 hover:text-orange-400 transition-colors text-sm">{s}</a>
+              {serviceFooterLinks.map((s) => (
+                <li key={s.label}>
+                  <Link to={s.to} className="text-blue-200/50 hover:text-orange-400 transition-colors text-sm">{s.label}</Link>
                 </li>
               ))}
             </ul>

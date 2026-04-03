@@ -1,4 +1,5 @@
 import { Droplets, Paintbrush, Building2, SprayCan, ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const services = [
   {
@@ -10,6 +11,7 @@ const services = [
     price: "Från 15 000 kr",
     image: "https://images.unsplash.com/photo-1625766763788-95ed44a1e7b4?auto=format&fit=crop&w=600&q=80",
     accent: "blue",
+    link: "/taktvatt",
   },
   {
     icon: Paintbrush,
@@ -20,6 +22,7 @@ const services = [
     price: "Från 30 000 kr",
     image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80",
     accent: "orange",
+    link: "/takmalning",
   },
   {
     icon: Building2,
@@ -30,6 +33,7 @@ const services = [
     price: "Från 12 000 kr",
     image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=600&q=80",
     accent: "blue",
+    link: "/fasadtvatt",
   },
   {
     icon: SprayCan,
@@ -40,6 +44,7 @@ const services = [
     price: "Från 10 000 kr",
     image: "https://images.unsplash.com/photo-1513467535987-fd81bc7d62f8?auto=format&fit=crop&w=600&q=80",
     accent: "orange",
+    link: "/takbehandling",
   },
 ];
 
@@ -110,14 +115,14 @@ const Services = () => {
                   ))}
                 </div>
 
-                <a
-                  href="#kontakt"
+                <Link
+                  to={service.link}
                   className={`inline-flex items-center text-sm font-bold gap-2 hover:gap-3 transition-all ${
                     service.accent === "orange" ? "text-orange-500 hover:text-orange-600" : "text-blue-600 hover:text-blue-700"
                   }`}
                 >
-                  Begär offert <ArrowRight className="w-4 h-4" />
-                </a>
+                  Läs mer <ArrowRight className="w-4 h-4" />
+                </Link>
               </div>
             </div>
           ))}
