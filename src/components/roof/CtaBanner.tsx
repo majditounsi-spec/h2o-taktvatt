@@ -7,7 +7,7 @@ const CtaBanner = () => {
     <section className="py-24 md:py-32 relative overflow-hidden bg-[#0c1a2e]">
       <div className="absolute inset-0">
         <img
-          src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          src="https://images.pexels.com/photos/2219024/pexels-photo-2219024.jpeg?auto=compress&cs=tinysrgb&w=1280"
           alt=""
           className="w-full h-full object-cover opacity-20"
         />
