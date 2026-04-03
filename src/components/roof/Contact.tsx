@@ -1,51 +1,42 @@
 import { useState } from "react";
-import { Phone, Mail, MapPin, Send, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Send, Clock, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
+
+const WEB3FORMS_KEY = "YOUR_ACCESS_KEY_HERE"; // Byt till din nyckel från web3forms.com
 
 const Contact = () => {
-  const { toast } = useToast();
   const [sending, setSending] = useState(false);
+  const [sent, setSent] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setSending(true);
+    setError("");
 
     const form = e.currentTarget;
     const data = new FormData(form);
+    data.append("access_key", WEB3FORMS_KEY);
+    data.append("subject", "Ny offertförfrågan – H2O Taktvätt");
+    data.append("from_name", "H2O Taktvätt hemsida");
 
     try {
-      const res = await fetch("https://formspree.io/f/xpwzgqjy", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         body: data,
-        headers: { Accept: "application/json" },
       });
+      const json = await res.json();
 
-      if (res.ok) {
-        toast({ title: "Tack för din förfrågan!", description: "Vi återkommer inom 24 timmar." });
+      if (json.success) {
+        setSent(true);
         form.reset();
       } else {
-        // Fallback: mailto
-        const name = data.get("name") as string;
-        const phone = data.get("phone") as string;
-        const email = data.get("email") as string;
-        const service = data.get("service") as string;
-        const message = data.get("message") as string;
-        const subject = encodeURIComponent(`Offertförfrågan från ${name}`);
-        const body = encodeURIComponent(`Namn: ${name}\nTelefon: ${phone}\nE-post: ${email}\nTjänst: ${service}\n\nMeddelande:\n${message}`);
-        window.location.href = `mailto:majdi.tounsi@gmail.com?subject=${subject}&body=${body}`;
-        toast({ title: "Formuläret öppnas i din e-post", description: "Skicka meddelandet därifrån." });
+        setError("Något gick fel. Ring oss istället på 070-123 45 67.");
       }
     } catch {
-      // Fallback: mailto
-      const name = data.get("name") as string;
-      const phone = data.get("phone") as string;
-      const subject = encodeURIComponent(`Offertförfrågan från ${name}`);
-      const body = encodeURIComponent(`Namn: ${name}\nTelefon: ${phone}`);
-      window.location.href = `mailto:majdi.tounsi@gmail.com?subject=${subject}&body=${body}`;
-      toast({ title: "Formuläret öppnas i din e-post", description: "Skicka meddelandet därifrån." });
+      setError("Kunde inte skicka. Kontrollera din internetanslutning eller ring oss.");
     } finally {
       setSending(false);
     }
@@ -103,57 +94,87 @@ const Contact = () => {
 
           {/* Form */}
           <div className="lg:col-span-3">
-            <form onSubmit={handleSubmit} className="bg-white rounded-2xl p-7 border border-gray-100 space-y-4">
-              <input type="hidden" name="_subject" value="Ny offertförfrågan från hemsidan" />
-
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Namn *</label>
-                  <Input name="name" placeholder="Ditt namn" required className="rounded-xl border-gray-200 h-11" />
+            <div className="bg-white rounded-2xl p-7 border border-gray-100">
+              {sent ? (
+                <div className="text-center py-12">
+                  <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="w-8 h-8 text-green-600" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">Tack för din förfrågan!</h3>
+                  <p className="text-gray-400 mb-6">Vi återkommer inom 24 timmar med en offert.</p>
+                  <button
+                    onClick={() => setSent(false)}
+                    className="text-sm font-semibold text-blue-600 hover:text-blue-700"
+                  >
+                    Skicka en till förfrågan
+                  </button>
                 </div>
-                <div>
-                  <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Telefon *</label>
-                  <Input name="phone" placeholder="070-XXX XX XX" required className="rounded-xl border-gray-200 h-11" />
-                </div>
-              </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Honeypot for spam */}
+                  <input type="checkbox" name="botcheck" className="hidden" />
 
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label className="text-sm font-semibold text-gray-700 mb-1.5 block">E-post</label>
-                  <Input name="email" type="email" placeholder="din@email.se" className="rounded-xl border-gray-200 h-11" />
-                </div>
-                <div>
-                  <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Adress</label>
-                  <Input name="address" placeholder="Gatuadress, ort" className="rounded-xl border-gray-200 h-11" />
-                </div>
-              </div>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Namn *</label>
+                      <Input name="name" placeholder="Ditt namn" required className="rounded-xl border-gray-200 h-11" />
+                    </div>
+                    <div>
+                      <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Telefon *</label>
+                      <Input name="phone" placeholder="070-XXX XX XX" required className="rounded-xl border-gray-200 h-11" />
+                    </div>
+                  </div>
 
-              <div>
-                <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Tjänst</label>
-                <select name="service" className="w-full rounded-xl border border-gray-200 bg-white px-4 h-11 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-                  <option value="">Välj tjänst...</option>
-                  <option value="Taktvätt">Taktvätt</option>
-                  <option value="Takmålning">Takmålning</option>
-                  <option value="Taktvätt & Takmålning">Taktvätt & Takmålning</option>
-                  <option value="Fasadtvätt">Fasadtvätt</option>
-                  <option value="Takbehandling & Impregnering">Takbehandling & Impregnering</option>
-                </select>
-              </div>
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label className="text-sm font-semibold text-gray-700 mb-1.5 block">E-post</label>
+                      <Input name="email" type="email" placeholder="din@email.se" className="rounded-xl border-gray-200 h-11" />
+                    </div>
+                    <div>
+                      <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Adress</label>
+                      <Input name="address" placeholder="Gatuadress, ort" className="rounded-xl border-gray-200 h-11" />
+                    </div>
+                  </div>
 
-              <div>
-                <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Meddelande</label>
-                <Textarea name="message" placeholder="Beskriv ditt tak och vad du behöver hjälp med..." rows={4} className="rounded-xl border-gray-200 resize-none" />
-              </div>
+                  <div>
+                    <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Tjänst</label>
+                    <select name="service" className="w-full rounded-xl border border-gray-200 bg-white px-4 h-11 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+                      <option value="">Välj tjänst...</option>
+                      <option value="Taktvätt">Taktvätt</option>
+                      <option value="Takmålning">Takmålning</option>
+                      <option value="Taktvätt & Takmålning">Taktvätt & Takmålning</option>
+                      <option value="Fasadtvätt">Fasadtvätt</option>
+                      <option value="Takbehandling & Impregnering">Takbehandling & Impregnering</option>
+                    </select>
+                  </div>
 
-              <Button type="submit" size="lg" disabled={sending} className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-xl py-6 text-sm font-semibold disabled:opacity-50">
-                <Send className="w-4 h-4 mr-2" />
-                {sending ? "Skickar..." : "Skicka offertförfrågan"}
-              </Button>
+                  <div>
+                    <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Meddelande</label>
+                    <Textarea name="message" placeholder="Beskriv ditt tak och vad du behöver hjälp med..." rows={4} className="rounded-xl border-gray-200 resize-none" />
+                  </div>
 
-              <p className="text-xs text-center text-gray-300">
-                Vi svarar inom 24 timmar. Dina uppgifter behandlas konfidentiellt.
-              </p>
-            </form>
+                  {error && (
+                    <div className="bg-red-50 text-red-700 text-sm p-3 rounded-xl">
+                      {error}
+                    </div>
+                  )}
+
+                  <Button
+                    type="submit"
+                    size="lg"
+                    disabled={sending}
+                    className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-xl py-6 text-sm font-semibold disabled:opacity-50"
+                  >
+                    <Send className="w-4 h-4 mr-2" />
+                    {sending ? "Skickar..." : "Skicka offertförfrågan"}
+                  </Button>
+
+                  <p className="text-xs text-center text-gray-300">
+                    Vi svarar inom 24 timmar. Dina uppgifter behandlas konfidentiellt.
+                  </p>
+                </form>
+              )}
+            </div>
           </div>
         </div>
       </div>
