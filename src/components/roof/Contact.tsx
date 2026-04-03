@@ -3,8 +3,7 @@ import { Phone, Mail, MapPin, Send, Clock, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-
-const WEB3FORMS_KEY = "YOUR_ACCESS_KEY_HERE"; // Byt till din nyckel från web3forms.com
+import { supabase } from "@/integrations/supabase/client";
 
 const Contact = () => {
   const [sending, setSending] = useState(false);
@@ -18,22 +17,25 @@ const Contact = () => {
 
     const form = e.currentTarget;
     const data = new FormData(form);
-    data.append("access_key", WEB3FORMS_KEY);
-    data.append("subject", "Ny offertförfrågan – H2O Taktvätt");
-    data.append("from_name", "H2O Taktvätt hemsida");
+
+    const inquiry = {
+      name: data.get("name") as string,
+      phone: data.get("phone") as string,
+      email: (data.get("email") as string) || null,
+      address: (data.get("address") as string) || null,
+      service: (data.get("service") as string) || null,
+      message: (data.get("message") as string) || null,
+    };
 
     try {
-      const res = await fetch("https://api.web3forms.com/submit", {
-        method: "POST",
-        body: data,
-      });
-      const json = await res.json();
+      const { error: dbError } = await supabase.from("inquiries").insert(inquiry);
 
-      if (json.success) {
+      if (dbError) {
+        console.error("Supabase error:", dbError);
+        setError("Något gick fel. Ring oss istället på 070-123 45 67.");
+      } else {
         setSent(true);
         form.reset();
-      } else {
-        setError("Något gick fel. Ring oss istället på 070-123 45 67.");
       }
     } catch {
       setError("Kunde inte skicka. Kontrollera din internetanslutning eller ring oss.");
@@ -57,9 +59,7 @@ const Contact = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
             Begär en kostnadsfri offert
           </h2>
-          <p className="text-gray-400">
-            Fyll i formuläret så återkommer vi inom 24 timmar.
-          </p>
+          <p className="text-gray-400">Fyll i formuläret så återkommer vi inom 24 timmar.</p>
         </div>
 
         <div className="grid lg:grid-cols-5 gap-8">
@@ -102,18 +102,12 @@ const Contact = () => {
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">Tack för din förfrågan!</h3>
                   <p className="text-gray-400 mb-6">Vi återkommer inom 24 timmar med en offert.</p>
-                  <button
-                    onClick={() => setSent(false)}
-                    className="text-sm font-semibold text-blue-600 hover:text-blue-700"
-                  >
+                  <button onClick={() => setSent(false)} className="text-sm font-semibold text-blue-600 hover:text-blue-700">
                     Skicka en till förfrågan
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  {/* Honeypot for spam */}
-                  <input type="checkbox" name="botcheck" className="hidden" />
-
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Namn *</label>
@@ -154,17 +148,10 @@ const Contact = () => {
                   </div>
 
                   {error && (
-                    <div className="bg-red-50 text-red-700 text-sm p-3 rounded-xl">
-                      {error}
-                    </div>
+                    <div className="bg-red-50 text-red-700 text-sm p-3 rounded-xl">{error}</div>
                   )}
 
-                  <Button
-                    type="submit"
-                    size="lg"
-                    disabled={sending}
-                    className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-xl py-6 text-sm font-semibold disabled:opacity-50"
-                  >
+                  <Button type="submit" size="lg" disabled={sending} className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-xl py-6 text-sm font-semibold disabled:opacity-50">
                     <Send className="w-4 h-4 mr-2" />
                     {sending ? "Skickar..." : "Skicka offertförfrågan"}
                   </Button>

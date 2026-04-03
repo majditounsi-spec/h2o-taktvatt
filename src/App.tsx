@@ -12,6 +12,9 @@ import TakbehandlingPage from "./pages/TakbehandlingPage";
 import OmOssPage from "./pages/OmOssPage";
 import OmdomenPage from "./pages/OmdomenPage";
 import KontaktPage from "./pages/KontaktPage";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+import AuthGuard from "./components/roof/AuthGuard";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -30,6 +33,7 @@ const App = () => (
       <BrowserRouter basename="/agency360-clone">
         <ScrollToTop />
         <Routes>
+          {/* Public */}
           <Route path="/" element={<RoofLanding />} />
           <Route path="/taktvatt" element={<TaktvattPage />} />
           <Route path="/takmalning" element={<TakmalningPage />} />
@@ -38,6 +42,11 @@ const App = () => (
           <Route path="/om-oss" element={<OmOssPage />} />
           <Route path="/omdomen" element={<OmdomenPage />} />
           <Route path="/kontakt" element={<KontaktPage />} />
+
+          {/* Admin */}
+          <Route path="/admin/login" element={<AdminLogin />} />
+          <Route path="/admin" element={<AuthGuard><AdminDashboard /></AuthGuard>} />
+
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
