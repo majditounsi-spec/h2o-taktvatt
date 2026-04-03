@@ -24,7 +24,7 @@ const Contact = () => {
   const contactInfo = [
     { icon: Phone, label: "Telefon", value: "070-123 45 67", href: "tel:+46701234567" },
     { icon: Mail, label: "E-post", value: "info@h2otaktvatt.se", href: "mailto:info@h2otaktvatt.se" },
-    { icon: MapPin, label: "Verksamma i", value: "Hela södra & mellersta Sverige" },
+    { icon: MapPin, label: "Verksamma i", value: "Kalmar län & Skåne" },
     { icon: Clock, label: "Öppettider", value: "Mån–Fre: 07–17 | Lör: 08–14" },
   ];
 

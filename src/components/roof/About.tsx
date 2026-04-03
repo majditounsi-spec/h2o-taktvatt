@@ -2,7 +2,7 @@ import { Shield, Users, Leaf, Award, CheckCircle } from "lucide-react";
 
 const features = [
   { icon: Shield, title: "Certifierade", text: "Utbildad personal inom takvård" },
-  { icon: Users, title: "3000+ kunder", text: "Nöjda fastighetsägare i hela Sverige" },
+  { icon: Users, title: "3000+ kunder", text: "Nöjda fastighetsägare i Kalmar län & Skåne" },
   { icon: Leaf, title: "Miljövänligt", text: "Certifierade produkter" },
   { icon: Award, title: "10 års garanti", text: "Bästa garantin i branschen" },
 ];

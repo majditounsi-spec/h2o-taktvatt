@@ -17,7 +17,7 @@ const Footer = () => {
           <div>
             <Logo className="mb-5 [&_span]:text-white [&_.text-gray-400]:text-blue-200/40 [&_.text-blue-600]:text-blue-400" />
             <p className="text-blue-200/40 text-sm leading-relaxed">
-              Professionell taktvätt, takmålning och fasadtvätt. Verksamma i hela södra och mellersta Sverige sedan 2008.
+              Professionell taktvätt, takmålning och fasadtvätt. Verksamma i Kalmar län och Skåne sedan 2008.
             </p>
           </div>
 
@@ -35,7 +35,7 @@ const Footer = () => {
           <div>
             <h4 className="font-semibold text-sm text-white mb-4">Vi finns i</h4>
             <ul className="space-y-2.5">
-              {["Stockholm", "Göteborg", "Malmö", "Helsingborg", "Lund", "Uppsala"].map((c) => (
+              {["Kalmar", "Nybro", "Oskarshamn", "Västervik", "Malmö", "Helsingborg"].map((c) => (
                 <li key={c}><span className="text-blue-200/40 text-sm">{c}</span></li>
               ))}
             </ul>
@@ -54,7 +54,7 @@ const Footer = () => {
               </li>
               <li className="flex gap-3">
                 <MapPin className="w-4 h-4 text-orange-400 mt-0.5 shrink-0" />
-                <span className="text-blue-200/40 text-sm">Södra & Mellersta Sverige</span>
+                <span className="text-blue-200/40 text-sm">Kalmar län & Skåne</span>
               </li>
             </ul>
           </div>

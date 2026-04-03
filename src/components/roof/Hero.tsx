@@ -36,7 +36,7 @@ const Hero = () => {
           </h1>
 
           <p className="text-base sm:text-lg text-white/60 max-w-md mb-10 leading-relaxed font-normal">
-            Vi förnyar och skyddar ditt tak med marknadens bästa produkter.
+            Vi förnyar och skyddar ditt tak i Kalmar län och Skåne.
             Kostnadsfri besiktning och 10 års garanti.
           </p>
 

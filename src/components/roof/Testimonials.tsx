@@ -19,7 +19,7 @@ const testimonials = [
   },
   {
     name: "Maria Svensson",
-    location: "Göteborg",
+    location: "Nybro",
     text: "Bra pris, proffsig personal och taket ser helt förnyat ut. 10 års garanti på färgen ger trygghet.",
     rating: 5,
     service: "Takmålning",
@@ -27,7 +27,7 @@ const testimonials = [
   },
   {
     name: "Karl Pettersson",
-    location: "Stockholm",
+    location: "Oskarshamn",
     text: "Fasadtvätt och taktvätt samtidigt. Huset ser ut som nybyggt! Snabbt och professionellt.",
     rating: 5,
     service: "Fasadtvätt & Taktvätt",
@@ -43,7 +43,7 @@ const testimonials = [
   },
   {
     name: "Johan Bergström",
-    location: "Uppsala",
+    location: "Västervik",
     text: "Professionellt från offert till slutbesiktning. De förklarade processen tydligt och levererade som utlovat.",
     rating: 5,
     service: "Taktvätt & Takmålning",
@@ -80,7 +80,7 @@ const Testimonials = () => {
             <span className="text-gradient-orange">säger</span>
           </h2>
           <p className="text-lg text-gray-500 leading-relaxed">
-            Vi är stolta över att ha tusentals nöjda kunder i hela Sverige.
+            Vi är stolta över att ha tusentals nöjda kunder i Kalmar län och Skåne.
           </p>
         </div>
 
