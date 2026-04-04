@@ -12,7 +12,7 @@ const FasadtvattPage = () => {
 
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28">
         <div className="absolute inset-0">
-          <img src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1280" alt="Husfasad" className="w-full h-full object-cover" />
+          <img src="https://images.pexels.com/photos/8134820/pexels-photo-8134820.jpeg?auto=compress&cs=tinysrgb&w=1280" alt="Husfasad" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0c1a2e]/95 via-[#0c1a2e]/80 to-[#0c1a2e]/60" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,7 +74,7 @@ const FasadtvattPage = () => {
             </div>
 
             <div className="space-y-6">
-              <img src="https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Ren fasad" className="w-full rounded-2xl" />
+              <img src="https://images.pexels.com/photos/7937079/pexels-photo-7937079.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Ren fasad" className="w-full rounded-2xl" />
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-blue-50 rounded-xl p-5 text-center">
                   <p className="text-2xl font-bold text-gray-900">Garanti</p>

@@ -78,7 +78,7 @@ const TaktvattPage = () => {
             </div>
 
             <div className="space-y-6">
-              <img src="https://images.pexels.com/photos/209274/pexels-photo-209274.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Taktvätt pågår" className="w-full rounded-2xl" />
+              <img src="https://images.pexels.com/photos/5997993/pexels-photo-5997993.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Taktvätt pågår" className="w-full rounded-2xl" />
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-blue-50 rounded-xl p-5 text-center">
                   <p className="text-2xl font-bold text-gray-900">2 år</p>

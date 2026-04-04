@@ -17,19 +17,19 @@ const About = () => {
             <div className="grid grid-cols-12 gap-4">
               <div className="col-span-7">
                 <img
-                  src="https://images.pexels.com/photos/3990359/pexels-photo-3990359.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  src="https://images.pexels.com/photos/13714499/pexels-photo-13714499.jpeg?auto=compress&cs=tinysrgb&w=600"
                   alt="Professionell taktvätt pågår"
                   className="w-full h-80 object-cover rounded-2xl"
                 />
               </div>
               <div className="col-span-5 flex flex-col gap-4">
                 <img
-                  src="https://images.pexels.com/photos/8583932/pexels-photo-8583932.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  src="https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=400"
                   alt="Svenskt hus med fint tak"
                   className="w-full h-[calc(50%-8px)] object-cover rounded-2xl"
                 />
                 <img
-                  src="https://images.pexels.com/photos/1029599/pexels-photo-1029599.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  src="https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=400"
                   alt="Modern fasad"
                   className="w-full h-[calc(50%-8px)] object-cover rounded-2xl"
                 />
