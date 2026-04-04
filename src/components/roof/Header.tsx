@@ -12,7 +12,6 @@ const serviceLinks = [
 ];
 
 const navLinks = [
-  { label: "Hem", href: "/" },
   { label: "Tjänster", href: "/taktvatt", dropdown: true },
   { label: "Om oss", href: "/om-oss" },
   { label: "Omdömen", href: "/omdomen" },
@@ -132,7 +131,6 @@ const Header = () => {
         {mobileOpen && (
           <nav className="lg:hidden pb-6 pt-2">
             <div className="bg-white rounded-2xl p-3 shadow-xl border border-gray-100">
-              <Link to="/" className="block text-sm font-medium text-gray-700 hover:bg-gray-50 px-4 py-3 rounded-xl">Hem</Link>
               <p className="text-[11px] font-semibold text-gray-300 uppercase tracking-widest px-4 pt-3 pb-1">Tjänster</p>
               {serviceLinks.map((s) => (
                 <Link key={s.href} to={s.href} className="flex items-center gap-3 px-4 py-2.5 rounded-xl hover:bg-blue-50/60">
