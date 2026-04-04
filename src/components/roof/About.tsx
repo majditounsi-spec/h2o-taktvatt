@@ -17,28 +17,31 @@ const About = () => {
             <div className="grid grid-cols-12 gap-4">
               <div className="col-span-7">
                 <img
-                  src="https://images.pexels.com/photos/13714499/pexels-photo-13714499.jpeg?auto=compress&cs=tinysrgb&w=600"
-                  alt="Professionell taktvätt pågår"
+                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80"
+                  alt="Svensk villa med betongpannetak"
                   className="w-full h-80 object-cover rounded-2xl"
+                  loading="lazy"
                 />
               </div>
               <div className="col-span-5 flex flex-col gap-4">
                 <img
-                  src="https://images.pexels.com/photos/2581922/pexels-photo-2581922.jpeg?auto=compress&cs=tinysrgb&w=400"
-                  alt="Svenskt hus med fint tak"
+                  src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80"
+                  alt="Hus med nytvättat tak"
                   className="w-full h-[calc(50%-8px)] object-cover rounded-2xl"
+                  loading="lazy"
                 />
                 <img
-                  src="https://images.pexels.com/photos/1396132/pexels-photo-1396132.jpeg?auto=compress&cs=tinysrgb&w=400"
-                  alt="Modern fasad"
+                  src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80"
+                  alt="Skandinavisk villa"
                   className="w-full h-[calc(50%-8px)] object-cover rounded-2xl"
+                  loading="lazy"
                 />
               </div>
             </div>
 
             {/* Float badge */}
             <div className="absolute bottom-4 left-4 bg-white rounded-xl px-5 py-4 shadow-lg border border-gray-100">
-              <p className="text-3xl font-bold text-gray-900">15+</p>
+              <p className="text-3xl font-bold text-gray-900">8</p>
               <p className="text-sm text-gray-400">Års erfarenhet</p>
             </div>
           </div>
@@ -47,7 +50,7 @@ const About = () => {
           <div>
             <p className="text-sm font-semibold text-orange-500 uppercase tracking-widest mb-3">Om oss</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 tracking-tight leading-tight">
-              Specialister på takvård sedan 2008
+              Specialister på takvård sedan 2018
             </h2>
             <p className="text-gray-400 mb-4 leading-relaxed">
               H2O Taktvätt grundades med visionen att erbjuda Sveriges bästa takvård.
