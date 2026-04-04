@@ -38,7 +38,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/agency360-clone">
+      <BrowserRouter basename="">
         <ScrollToTop />
         <Suspense fallback={<PageLoader />}>
           <Routes>
