@@ -38,7 +38,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="">
+      <BrowserRouter basename="/h2o-taktvatt">
         <ScrollToTop />
         <Suspense fallback={<PageLoader />}>
           <Routes>
