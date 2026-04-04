@@ -34,15 +34,10 @@ const steps = [
 const Process = () => {
   return (
     <section id="process" className="py-24 md:py-32 bg-white relative overflow-hidden">
-      {/* Background decoration */}
       <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-blue-50 to-transparent" />
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-20">
-          <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-100 rounded-full px-4 py-2 mb-6">
-            <span className="w-2 h-2 rounded-full bg-blue-600" />
-            <span className="text-sm font-semibold text-orange-700">Vår process</span>
-          </div>
           <h2 className="text-4xl sm:text-5xl font-extrabold text-gray-900 mb-5 tracking-tight">
             Från offert till{" "}
             <span className="text-gradient-blue">färdigt tak</span>
@@ -55,7 +50,6 @@ const Process = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
           {steps.map((step, index) => (
             <div key={step.step} className="relative group">
-              {/* Connector */}
               {index < steps.length - 1 && (
                 <div className="hidden lg:block absolute top-16 left-[60%] w-full h-[2px]">
                   <div className="w-full h-full bg-gradient-to-r from-gray-200 to-gray-100" />
