@@ -8,6 +8,13 @@ const AuthGuard = ({ children }: { children: React.ReactNode }) => {
   const navigate = useNavigate();
 
   useEffect(() => {
+    // Check demo auth first
+    if (localStorage.getItem("h2o_demo_auth") === "true") {
+      setAuthed(true);
+      setChecked(true);
+      return;
+    }
+
     supabase.auth.getSession().then(({ data }) => {
       if (data.session) {
         setAuthed(true);

@@ -30,9 +30,48 @@ const statusLabels: Record<string, { label: string; color: string }> = {
   avböjd: { label: "Avböjd", color: "bg-gray-100 text-gray-500" },
 };
 
+const demoInquiries: Inquiry[] = [
+  {
+    id: "1", created_at: new Date(Date.now() - 1000 * 60 * 30).toISOString(),
+    name: "Lars Nilsson", phone: "070-234 56 78", email: "lars.n@gmail.com",
+    address: "Storgatan 12, Kalmar", service: "Taktvätt",
+    message: "Hej! Vi har en hel del mossa på taket och undrar vad det skulle kosta att tvätta. Huset är en 1,5-plans villa med ca 140 kvm takyta. Betongpannor från -95.",
+    status: "ny", notes: null,
+  },
+  {
+    id: "2", created_at: new Date(Date.now() - 1000 * 60 * 60 * 3).toISOString(),
+    name: "Karin Svensson", phone: "073-456 78 90", email: "karin.svensson@outlook.com",
+    address: "Björkvägen 8, Nybro", service: "Taktvätt & Takmålning",
+    message: "Vi funderar på att både tvätta och måla om taket. Pannorna börjar se slitna ut och det samlas sand i hängrännan. Kan ni komma och titta?",
+    status: "kontaktad", notes: "Ringde 3/4 – bokade besiktning tisdag 8/4 kl 10.",
+  },
+  {
+    id: "3", created_at: new Date(Date.now() - 1000 * 60 * 60 * 24).toISOString(),
+    name: "Per Johansson", phone: "076-789 01 23", email: null,
+    address: "Sjövägen 3, Oskarshamn", service: "Fasadtvätt",
+    message: "Fasaden på norrssidan har blivit grön av alger. Putsfasad. Vill ha offert.",
+    status: "offert_skickad", notes: "Offert skickad 2/4: 14 500 kr ink moms. Fasadtvätt + algbehandling.",
+  },
+  {
+    id: "4", created_at: new Date(Date.now() - 1000 * 60 * 60 * 72).toISOString(),
+    name: "Anna Bergström", phone: "070-111 22 33", email: "anna.b@icloud.com",
+    address: "Ekgatan 5, Västervik", service: "Takmålning",
+    message: "Vill måla om taket i svart. Har redan tvättat det själv. Hur lång tid tar det?",
+    status: "klar", notes: "Klart 28/3. Kund nöjd. 2 lager svart NCS 9000-N. Faktura betald.",
+  },
+  {
+    id: "5", created_at: new Date(Date.now() - 1000 * 60 * 60 * 6).toISOString(),
+    name: "Maria Ek", phone: "072-333 44 55", email: "maria.ek@gmail.com",
+    address: "Parkvägen 22, Emmaboda", service: "Takbehandling & Impregnering",
+    message: "Hej, vi tvättade taket förra året och vill nu impregnera det. Går det att göra nu på våren?",
+    status: "ny", notes: null,
+  },
+];
+
 const AdminDashboard = () => {
   const [inquiries, setInquiries] = useState<Inquiry[]>([]);
   const [loading, setLoading] = useState(true);
+  const [isDemo, setIsDemo] = useState(false);
   const [selected, setSelected] = useState<Inquiry | null>(null);
   const [notes, setNotes] = useState("");
   const [filter, setFilter] = useState("alla");
@@ -40,41 +79,53 @@ const AdminDashboard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    checkAuth();
-    fetchInquiries();
+    init();
   }, []);
 
-  const checkAuth = async () => {
-    const { data } = await supabase.auth.getSession();
-    if (!data.session) navigate("/admin/login");
-  };
+  const init = async () => {
+    const demo = localStorage.getItem("h2o_demo_auth") === "true";
 
-  const fetchInquiries = async () => {
-    const { data, error } = await supabase
+    if (demo) {
+      setIsDemo(true);
+      setInquiries(demoInquiries);
+      setLoading(false);
+      return;
+    }
+
+    const { data } = await supabase.auth.getSession();
+    if (!data.session) {
+      navigate("/admin/login");
+      return;
+    }
+
+    const { data: rows, error } = await supabase
       .from("inquiries")
       .select("*")
       .order("created_at", { ascending: false });
 
-    if (!error && data) {
-      setInquiries(data as Inquiry[]);
-    }
+    if (!error && rows) setInquiries(rows as Inquiry[]);
     setLoading(false);
   };
 
   const updateStatus = async (id: string, status: string) => {
-    await supabase.from("inquiries").update({ status }).eq("id", id);
+    if (!isDemo) {
+      await supabase.from("inquiries").update({ status }).eq("id", id);
+    }
     setInquiries((prev) => prev.map((i) => (i.id === id ? { ...i, status } : i)));
     if (selected?.id === id) setSelected({ ...selected, status });
   };
 
   const saveNotes = async () => {
     if (!selected) return;
-    await supabase.from("inquiries").update({ notes }).eq("id", selected.id);
+    if (!isDemo) {
+      await supabase.from("inquiries").update({ notes }).eq("id", selected.id);
+    }
     setInquiries((prev) => prev.map((i) => (i.id === selected.id ? { ...i, notes } : i)));
     setSelected({ ...selected, notes });
   };
 
   const handleLogout = async () => {
+    localStorage.removeItem("h2o_demo_auth");
     await supabase.auth.signOut();
     navigate("/admin/login");
   };
@@ -103,12 +154,13 @@ const AdminDashboard = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Header */}
       <header className="bg-white border-b border-gray-100 sticky top-0 z-40">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
           <Logo variant="dark" />
           <div className="flex items-center gap-3">
-            <span className="text-sm text-gray-400 hidden sm:block">Admin</span>
+            {isDemo && (
+              <span className="text-xs bg-orange-100 text-orange-700 font-semibold px-2.5 py-1 rounded-lg">DEMO</span>
+            )}
             <Button variant="outline" size="sm" onClick={handleLogout} className="rounded-lg text-gray-500 h-9">
               <LogOut className="w-4 h-4 mr-1" /> Logga ut
             </Button>
@@ -130,9 +182,7 @@ const AdminDashboard = () => {
               key={s.key}
               onClick={() => setFilter(s.key)}
               className={`p-4 rounded-xl border text-left transition-all ${
-                filter === s.key
-                  ? "bg-blue-50 border-blue-200"
-                  : "bg-white border-gray-100 hover:border-gray-200"
+                filter === s.key ? "bg-blue-50 border-blue-200" : "bg-white border-gray-100 hover:border-gray-200"
               }`}
             >
               <s.icon className={`w-5 h-5 mb-2 ${filter === s.key ? "text-blue-600" : "text-gray-300"}`} />
@@ -162,7 +212,7 @@ const AdminDashboard = () => {
             ) : filtered.length === 0 ? (
               <div className="text-center py-12 bg-white rounded-2xl border border-gray-100">
                 <MessageSquare className="w-10 h-10 text-gray-200 mx-auto mb-3" />
-                <p className="text-gray-400">Inga förfrågningar {filter !== "alla" ? `med status "${statusLabels[filter]?.label}"` : ""}</p>
+                <p className="text-gray-400">Inga förfrågningar</p>
               </div>
             ) : (
               filtered.map((inq) => (
@@ -187,12 +237,15 @@ const AdminDashboard = () => {
                     {inq.service && <span className="flex items-center gap-1"><FileText className="w-3 h-3" />{inq.service}</span>}
                     {inq.address && <span className="flex items-center gap-1"><MapPin className="w-3 h-3" />{inq.address}</span>}
                   </div>
+                  {inq.message && (
+                    <p className="text-xs text-gray-300 mt-2 line-clamp-1">{inq.message}</p>
+                  )}
                 </button>
               ))
             )}
           </div>
 
-          {/* Detail panel */}
+          {/* Detail */}
           <div className="lg:col-span-1">
             {selected ? (
               <div className="bg-white rounded-2xl border border-gray-100 p-6 sticky top-24">
@@ -239,7 +292,6 @@ const AdminDashboard = () => {
                   </div>
                 )}
 
-                {/* Status */}
                 <div className="mb-6">
                   <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Status</p>
                   <div className="relative">
@@ -256,22 +308,17 @@ const AdminDashboard = () => {
                   </div>
                 </div>
 
-                {/* Notes */}
                 <div>
                   <p className="text-xs font-semibold text-gray-400 uppercase tracking-wider mb-2">Anteckningar</p>
                   <Textarea
                     value={notes}
                     onChange={(e) => setNotes(e.target.value)}
-                    placeholder="Skriv anteckningar om kunden..."
+                    placeholder="Skriv anteckningar..."
                     rows={3}
                     className="rounded-xl border-gray-200 resize-none text-sm mb-2"
                   />
-                  <Button
-                    onClick={saveNotes}
-                    size="sm"
-                    className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs h-8"
-                  >
-                    Spara anteckningar
+                  <Button onClick={saveNotes} size="sm" className="bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs h-8">
+                    Spara
                   </Button>
                 </div>
               </div>
