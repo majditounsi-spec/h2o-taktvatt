@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="240" height="240" viewBox="0 0 240 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <path d="M30 150L120 50L210 150" stroke="url(#roof-grad-icon)" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+  <path d="M20 180C50 155 70 175 100 160C130 145 150 165 180 150C200 140 210 150 220 145" stroke="#F57C00" stroke-width="16" stroke-linecap="round" fill="none"/>
+  <path d="M40 210C65 190 80 205 110 190C140 175 155 195 185 180C205 170 215 180 225 175" stroke="#F57C00" stroke-width="13" stroke-linecap="round" fill="none" opacity="0.45"/>
+  <circle cx="120" cy="100" r="20" fill="#F57C00"/>
+  <circle cx="117" cy="94" r="7" fill="white" opacity="0.6"/>
+  <defs>
+    <linearGradient id="roof-grad-icon" x1="30" y1="100" x2="210" y2="100">
+      <stop offset="0%" stop-color="#1565C0"/>
+      <stop offset="100%" stop-color="#0D47A1"/>
+    </linearGradient>
+  </defs>
+</svg>
