@@ -1,6 +1,7 @@
 import { Star, StarHalf } from "lucide-react";
+import { useWPTestimonials } from "@/hooks/useWordPress";
 
-const testimonials = [
+const staticTestimonials = [
   {
     name: "Lars Nilsson",
     location: "Kalmar",
@@ -25,6 +26,8 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
+  const { data: testimonials } = useWPTestimonials(staticTestimonials);
+
   return (
     <section id="omdomen" className="py-24 md:py-32 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -33,8 +36,6 @@ const Testimonials = () => {
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
             Vad våra kunder tycker
           </h2>
-
-          {/* Rating display */}
           <div className="flex items-center justify-center gap-2 mb-2">
             <div className="flex gap-0.5">
               {[1,2,3,4].map((i) => (
@@ -52,18 +53,13 @@ const Testimonials = () => {
 
         <div className="grid md:grid-cols-3 gap-6">
           {testimonials.map((t, i) => (
-            <div
-              key={i}
-              className="bg-[#fafaf8] rounded-2xl p-7 border border-gray-100"
-            >
+            <div key={i} className="bg-[#fafaf8] rounded-2xl p-7 border border-gray-100">
               <div className="flex gap-0.5 mb-4">
                 {[1,2,3,4,5].map((j) => (
                   <Star key={j} className="w-4 h-4 fill-orange-400 text-orange-400" />
                 ))}
               </div>
-
               <p className="text-gray-600 mb-6 leading-relaxed text-[15px]">"{t.text}"</p>
-
               <div className="flex items-center justify-between pt-5 border-t border-gray-200/60">
                 <div className="flex items-center gap-3">
                   <div className="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center text-white text-xs font-bold">
