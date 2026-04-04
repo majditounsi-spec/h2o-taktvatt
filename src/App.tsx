@@ -7,7 +7,6 @@ import { useEffect, lazy, Suspense } from "react";
 import RoofLanding from "./pages/RoofLanding";
 import NotFound from "./pages/NotFound";
 
-// Lazy load all non-critical pages
 const TaktvattPage = lazy(() => import("./pages/TaktvattPage"));
 const TakmalningPage = lazy(() => import("./pages/TakmalningPage"));
 const FasadtvattPage = lazy(() => import("./pages/FasadtvattPage"));
@@ -38,11 +37,10 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter basename="/h2o-taktvatt">
+      <BrowserRouter basename="/h2otaktvatt.se">
         <ScrollToTop />
         <Suspense fallback={<PageLoader />}>
           <Routes>
-            {/* Public */}
             <Route path="/" element={<RoofLanding />} />
             <Route path="/taktvatt" element={<TaktvattPage />} />
             <Route path="/takmalning" element={<TakmalningPage />} />
@@ -51,15 +49,12 @@ const App = () => (
             <Route path="/om-oss" element={<OmOssPage />} />
             <Route path="/omdomen" element={<OmdomenPage />} />
             <Route path="/kontakt" element={<KontaktPage />} />
-
-            {/* Admin */}
             <Route path="/admin/login" element={<AdminLogin />} />
             <Route path="/admin" element={
               <Suspense fallback={<PageLoader />}>
                 <AuthGuard><AdminDashboard /></AuthGuard>
               </Suspense>
             } />
-
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
