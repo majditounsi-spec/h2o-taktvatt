@@ -72,7 +72,7 @@ const Hero = () => {
           {/* Trust row */}
           <div className="flex flex-wrap items-center gap-6 sm:gap-10 text-white/40 text-sm">
             <div className="flex items-center gap-2">
-              <span className="text-2xl font-bold text-white">15+</span>
+              <span className="text-2xl font-bold text-white">8+</span>
               <span>års<br />erfarenhet</span>
             </div>
             <div className="w-px h-8 bg-white/10" />

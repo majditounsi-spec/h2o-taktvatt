@@ -17,7 +17,7 @@ const Footer = () => {
           <div>
             <Logo className="mb-5 [&_span]:text-white [&_.text-gray-400]:text-blue-200/40 [&_.text-blue-600]:text-blue-400" />
             <p className="text-blue-200/40 text-sm leading-relaxed">
-              Professionell taktvätt, takmålning och fasadtvätt. Verksamma i Kalmar län och Skåne sedan 2008.
+              Professionell taktvätt, takmålning och fasadtvätt. Verksamma i Kalmar län och Skåne sedan 2018.
             </p>
           </div>
 

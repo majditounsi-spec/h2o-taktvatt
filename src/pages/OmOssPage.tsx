@@ -4,7 +4,7 @@ import About from "@/components/roof/About";
 import { Shield, Users, Award, Leaf, MapPin } from "lucide-react";
 
 const stats = [
-  { value: "15+", label: "Års erfarenhet", icon: Award },
+  { value: "8+", label: "Års erfarenhet", icon: Award },
   { value: "3000+", label: "Nöjda kunder", icon: Users },
   { value: "10 år", label: "Garanti", icon: Shield },
   { value: "100%", label: "Miljövänligt", icon: Leaf },
@@ -41,12 +41,12 @@ const OmOssPage = () => {
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-6 tracking-tight">Vår historia</h2>
           <p className="text-gray-500 mb-5 leading-relaxed">
-            H2O Taktvätt startade 2008 som ett litet familjeföretag i Kalmar. Tanken var enkel:
+            H2O Taktvätt startade 2018 som ett litet familjeföretag i Kalmar. Tanken var enkel:
             erbjuda hederlig takvård till rimliga priser, utan att tumma på kvaliteten. Vi hade
             sett för många grannar som anlitade billiga firmor som lämnade halva jobbet ogjort.
           </p>
           <p className="text-gray-500 mb-5 leading-relaxed">
-            Idag, 15 år senare, har vi tvättat och målat över 3 000 tak i Kalmar län och Skåne.
+            Idag, 8 år senare, har vi tvättat och målat över 3 000 tak i Kalmar län och Skåne.
             Vi är fortfarande samma firma med samma värderingar: vi gör jobbet ordentligt,
             vi håller vad vi lovar, och vi lämnar inte platsen förrän kunden är nöjd.
           </p>
