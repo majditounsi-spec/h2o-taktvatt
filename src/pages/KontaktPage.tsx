@@ -9,7 +9,7 @@ const KontaktPage = () => {
 
       <section className="relative pt-32 pb-16 md:pt-40 md:pb-20">
         <div className="absolute inset-0">
-          <img src="https://images.pexels.com/photos/7578980/pexels-photo-7578980.jpeg?auto=compress&cs=tinysrgb&w=1280" alt="Kontakt" className="w-full h-full object-cover" />
+          <img src="https://images.pexels.com/photos/35172803/pexels-photo-35172803.jpeg?auto=compress&cs=tinysrgb&w=1280" alt="Nordiskt hus med tegeltak" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0c1a2e]/95 via-[#0c1a2e]/80 to-[#0c1a2e]/60" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

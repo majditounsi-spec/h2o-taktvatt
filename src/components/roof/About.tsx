@@ -17,22 +17,22 @@ const About = () => {
             <div className="grid grid-cols-12 gap-4">
               <div className="col-span-7">
                 <img
-                  src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80"
-                  alt="Svensk villa med betongpannetak"
+                  src="https://images.pexels.com/photos/34043616/pexels-photo-34043616.jpeg?auto=compress&cs=tinysrgb&w=600"
+                  alt="Svenskt hus med rött tegeltak"
                   className="w-full h-80 object-cover rounded-2xl"
                   loading="lazy"
                 />
               </div>
               <div className="col-span-5 flex flex-col gap-4">
                 <img
-                  src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=400&q=80"
-                  alt="Hus med nytvättat tak"
+                  src="https://images.pexels.com/photos/6432077/pexels-photo-6432077.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  alt="Närbild på rena takpannor"
                   className="w-full h-[calc(50%-8px)] object-cover rounded-2xl"
                   loading="lazy"
                 />
                 <img
-                  src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&w=400&q=80"
-                  alt="Skandinavisk villa"
+                  src="https://images.pexels.com/photos/33740553/pexels-photo-33740553.jpeg?auto=compress&cs=tinysrgb&w=400"
+                  alt="Nordiskt hus med tegeltak"
                   className="w-full h-[calc(50%-8px)] object-cover rounded-2xl"
                   loading="lazy"
                 />
