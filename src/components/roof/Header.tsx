@@ -51,12 +51,12 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      solid ? "bg-white/98 backdrop-blur-lg shadow-sm" : "bg-transparent"
+      solid ? "bg-[#0c1a2e]/95 backdrop-blur-lg shadow-lg" : "bg-transparent"
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <Link to="/">
-            <Logo variant={solid ? "dark" : "light"} />
+            <Logo variant="light" />
           </Link>
 
           {/* Desktop nav */}
@@ -67,7 +67,7 @@ const Header = () => {
                   <button
                     onClick={() => setDropdownOpen(!dropdownOpen)}
                     className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-orange-500 ${
-                      solid ? "text-gray-600" : "text-white"
+                      solid ? "text-white/80" : "text-white"
                     }`}
                   >
                     {link.label}
@@ -101,7 +101,7 @@ const Header = () => {
                   className={`text-sm font-medium transition-colors hover:text-orange-500 ${
                     location.pathname === link.href
                       ? "text-orange-500"
-                      : solid ? "text-gray-600" : "text-white"
+                      : solid ? "text-white/80" : "text-white"
                   }`}
                 >
                   {link.label}
@@ -111,7 +111,7 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center gap-4">
-            <a href="tel:+46701234567" className={`hidden md:flex items-center gap-2 text-sm font-semibold ${solid ? "text-gray-700" : "text-white"}`}>
+            <a href="tel:+46701234567" className={`hidden md:flex items-center gap-2 text-sm font-semibold ${solid ? "text-white/80" : "text-white"}`}>
               <Phone className="w-4 h-4" />
               070-123 45 67
             </a>
@@ -120,9 +120,9 @@ const Header = () => {
             </Button>
             <button className="lg:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}>
               {mobileOpen ? (
-                <X className={`w-6 h-6 ${solid ? "text-gray-900" : "text-white"}`} />
+                <X className={`w-6 h-6 text-white`} />
               ) : (
-                <Menu className={`w-6 h-6 ${solid ? "text-gray-900" : "text-white"}`} />
+                <Menu className={`w-6 h-6 text-white`} />
               )}
             </button>
           </div>

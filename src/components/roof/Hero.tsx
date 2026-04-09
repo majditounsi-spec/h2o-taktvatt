@@ -8,8 +8,8 @@ const Hero = () => {
       {/* Background image - professional roof cleaning */}
       <div className="absolute inset-0">
         <img
-          src="https://images.pexels.com/photos/8961251/pexels-photo-8961251.jpeg?auto=compress&cs=tinysrgb&w=1280"
-          alt="Professionell taktvätt med högtryckstvätt"
+          src="https://images.pexels.com/photos/29174227/pexels-photo-29174227.jpeg?auto=compress&cs=tinysrgb&w=1280"
+          alt="Flygvy över svenska hustak med tegelpannor"
           className="w-full h-full object-cover"
           loading="eager"
           decoding="sync"
@@ -17,7 +17,7 @@ const Hero = () => {
           width={1280}
           height={854}
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#0c1a2e]/95 via-[#0c1a2e]/75 to-[#0c1a2e]/50" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0c1a2e]/90 via-[#0c1a2e]/65 to-[#0c1a2e]/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0c1a2e]/60 to-transparent" />
       </div>
 

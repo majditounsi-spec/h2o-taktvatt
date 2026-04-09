@@ -40,8 +40,8 @@ const BeforeAfterSlider = () => {
           >
             {/* After (clean roof) — full background */}
             <img
-              src="https://images.pexels.com/photos/6432077/pexels-photo-6432077.jpeg?auto=compress&cs=tinysrgb&w=800"
-              alt="Tak efter tvätt – rent och fräscht"
+              src="https://images.pexels.com/photos/15321060/pexels-photo-15321060.jpeg?auto=compress&cs=tinysrgb&w=800"
+              alt="Tak efter tvätt – rena röda tegelpannor"
               className="absolute inset-0 w-full h-full object-cover"
               draggable={false}
             />
@@ -52,8 +52,8 @@ const BeforeAfterSlider = () => {
               style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
             >
               <img
-                src="https://images.pexels.com/photos/2469122/pexels-photo-2469122.jpeg?auto=compress&cs=tinysrgb&w=800"
-                alt="Tak före tvätt – mossa och smuts"
+                src="https://images.pexels.com/photos/3621348/pexels-photo-3621348.jpeg?auto=compress&cs=tinysrgb&w=800"
+                alt="Tak före tvätt – slitna och missfärgade pannor"
                 className="w-full h-full object-cover"
                 draggable={false}
               />
