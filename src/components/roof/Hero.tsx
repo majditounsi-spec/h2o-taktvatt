@@ -8,8 +8,8 @@ const Hero = () => {
       {/* Background image - professional roof cleaning */}
       <div className="absolute inset-0">
         <img
-          src="https://images.pexels.com/photos/29174227/pexels-photo-29174227.jpeg?auto=compress&cs=tinysrgb&w=1280"
-          alt="Flygvy över svenska hustak med tegelpannor"
+          src="/images/hero-h2o.jpg"
+          alt="Flygvy över Ekerum – vita hus med nymålade tak och H2O Taktvätt servicebil"
           className="w-full h-full object-cover"
           loading="eager"
           decoding="sync"

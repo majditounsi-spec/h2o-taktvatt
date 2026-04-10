@@ -3,25 +3,25 @@ import { useWPTestimonials } from "@/hooks/useWordPress";
 
 const staticTestimonials = [
   {
-    name: "Lars Nilsson",
-    location: "Kalmar",
-    text: "Anlitade H2O för taktvätt och impregnering av vår villa i Kalmar. Riktigt bra jobb – taket ser ut som nytt och de städade fint efter sig. Fick fast pris som stämde.",
-    service: "Taktvätt & Impregnering",
-    initials: "LN",
+    name: "Christer Andersson",
+    location: "Teknisk Förvaltare, Ekerum",
+    text: "Styrelsen i Ekerum BRF 1 gav Er förtroendet våren 2021 att ge våra 85 hus en rejäl \"ansiktslyftning\"! Redan efter taktvätten så anade vi att det var något fantastiskt på gång. När nu målningen är utförd så kan vi med glädje konstatera att området faktiskt blev bättre än vad vi hade vågat hoppas på! Från Ekerum vill vi framföra inte bara ett stort tack för vackra tak utan också på det sättet som Ni har genomfört projektet.",
+    service: "Taktvätt & Takmålning",
+    initials: "CA",
   },
   {
-    name: "Karin Svensson",
-    location: "Nybro",
-    text: "Vi hade mossa på hela taket och grön beväxning på fasaden. H2O fixade allt på två dagar. Grannarna trodde vi målat om hela huset. Rekommenderar dem varmt.",
-    service: "Taktvätt & Fasadtvätt",
-    initials: "KS",
+    name: "Ann Georgsson",
+    location: "Fridlevstad, Karlskrona",
+    text: "H2O Taktvätt i Sydost AB gjorde att fantastiskt jobb på vårt tak! Blev som ett helt nytt tak, så snyggt! Duktiga killar som utförde jobbet! Först tvätt med ånga och sedan målning. Tack från Ann och Johan i Fridlevstad, Karlskrona.",
+    service: "Taktvätt & Takmålning",
+    initials: "AG",
   },
   {
-    name: "Per Johansson",
-    location: "Oskarshamn",
-    text: "Fick taket målat i somras. Bra kommunikation, de förklarade vad de skulle göra och höll tidplanen. Garantin på 10 år känns trygg. Nöjd med resultatet.",
-    service: "Takmålning",
-    initials: "PJ",
+    name: "Birgitta Ek",
+    location: "Kund",
+    text: "Superbra utfört arbete, allt från första besöket, kontakten med H2O Taktvätt under arbetets gång till slutfört arbetet med taktvätt och takmålning. Tack John och Jonathan m fl!",
+    service: "Taktvätt & Takmålning",
+    initials: "BE",
   },
 ];
 
