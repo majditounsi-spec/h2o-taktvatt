@@ -8,14 +8,14 @@ const Hero = () => {
       {/* Background image - professional roof cleaning */}
       <div className="absolute inset-0">
         <img
-          src="/images/hero-h2o.jpg"
-          alt="Flygvy över Ekerum – vita hus med nymålade tak och H2O Taktvätt servicebil"
+          src="/images/hero-start.jpg"
+          alt="Flygvy över villaområde med vita hus med svarta tak vid sjön"
           className="w-full h-full object-cover"
           loading="eager"
           decoding="sync"
           fetchPriority="high"
-          width={1280}
-          height={854}
+          width={1270}
+          height={717}
         />
         <div className="absolute inset-0 bg-gradient-to-r from-[#0c1a2e]/90 via-[#0c1a2e]/65 to-[#0c1a2e]/40" />
         <div className="absolute inset-0 bg-gradient-to-t from-[#0c1a2e]/60 to-transparent" />

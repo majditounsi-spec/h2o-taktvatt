@@ -19,7 +19,7 @@ const services = [
     description: "UV-beständig takfärg som skyddar betongpannor i minst 10 år. Vackert, hållbart resultat.",
     features: ["10 års garanti", "UV-beständig", "Valfri kulör"],
     price: "Från 30 000 kr",
-    image: "https://images.pexels.com/photos/9431615/pexels-photo-9431615.jpeg?auto=compress&cs=tinysrgb&w=600",
+    image: "/images/takmalning-service.jpg",
     accent: "orange",
     link: "/takmalning",
   },
