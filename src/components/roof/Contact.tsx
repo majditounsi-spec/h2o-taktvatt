@@ -28,16 +28,29 @@ const Contact = () => {
     };
 
     try {
+      // 1. Send to Netlify Forms (triggers email notification)
+      const netlifyBody = new URLSearchParams();
+      netlifyBody.append("form-name", "offertforfragan");
+      data.forEach((value, key) => netlifyBody.append(key, value as string));
+
+      const netlifyRes = await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: netlifyBody.toString(),
+      });
+
+      // 2. Also save to Supabase (backup / DB record)
       const { error: dbError } = await supabase.from("inquiries").insert(inquiry);
 
-      if (dbError) {
-        console.error("Supabase error:", dbError);
+      if (!netlifyRes.ok && dbError) {
+        console.error("Submit failed:", { netlifyRes, dbError });
         setError("Något gick fel. Ring oss istället på 070-123 45 67.");
       } else {
         setSent(true);
         form.reset();
       }
-    } catch {
+    } catch (err) {
+      console.error(err);
       setError("Kunde inte skicka. Kontrollera din internetanslutning eller ring oss.");
     } finally {
       setSending(false);
@@ -107,7 +120,20 @@ const Contact = () => {
                   </button>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
+                <form
+                  onSubmit={handleSubmit}
+                  name="offertforfragan"
+                  method="POST"
+                  data-netlify="true"
+                  netlify-honeypot="bot-field"
+                  className="space-y-4"
+                >
+                  <input type="hidden" name="form-name" value="offertforfragan" />
+                  <p className="hidden">
+                    <label>
+                      Lämna detta fält tomt: <input name="bot-field" />
+                    </label>
+                  </p>
                   <div className="grid sm:grid-cols-2 gap-4">
                     <div>
                       <label className="text-sm font-semibold text-gray-700 mb-1.5 block">Namn *</label>
