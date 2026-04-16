@@ -51,7 +51,7 @@ const Header = () => {
 
   return (
     <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      solid ? "bg-[#0c1a2e]/95 backdrop-blur-lg shadow-lg" : "bg-transparent"
+      solid ? "bg-white shadow-lg" : "bg-transparent"
     }`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
@@ -66,8 +66,8 @@ const Header = () => {
                 <div key={link.label} ref={dropdownRef} className="relative">
                   <button
                     onClick={() => setDropdownOpen(!dropdownOpen)}
-                    className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-orange-500 ${
-                      solid ? "text-white/80" : "text-white"
+                    className={`flex items-center gap-1 text-sm font-medium transition-colors hover:text-blue-600 ${
+                      solid ? "text-gray-700" : "text-white"
                     }`}
                   >
                     {link.label}
@@ -98,10 +98,10 @@ const Header = () => {
                 <Link
                   key={link.label}
                   to={link.href}
-                  className={`text-sm font-medium transition-colors hover:text-orange-500 ${
+                  className={`text-sm font-medium transition-colors hover:text-blue-600 ${
                     location.pathname === link.href
-                      ? "text-orange-500"
-                      : solid ? "text-white/80" : "text-white"
+                      ? "text-blue-600"
+                      : solid ? "text-gray-700" : "text-white"
                   }`}
                 >
                   {link.label}
@@ -111,7 +111,7 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center gap-4">
-            <a href="tel:+46701234567" className={`hidden md:flex items-center gap-2 text-sm font-semibold ${solid ? "text-white/80" : "text-white"}`}>
+            <a href="tel:+46701234567" className={`hidden md:flex items-center gap-2 text-sm font-semibold ${solid ? "text-gray-700" : "text-white"}`}>
               <Phone className="w-4 h-4" />
               070-123 45 67
             </a>
