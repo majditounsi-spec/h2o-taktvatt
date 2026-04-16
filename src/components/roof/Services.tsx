@@ -1,10 +1,8 @@
 import { ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
-import { RoofWashIcon, RoofPaintIcon, FacadeWashIcon, RoofShieldIcon } from "./ServiceIcons";
 
 const services = [
   {
-    icon: RoofWashIcon,
     title: "Taktvätt",
     description: "Professionell högtryckstvätt som tar bort mossa, lav och alger. Skyddande plastning under hela processen.",
     features: ["Högtryckstvätt", "Mossbehandling", "Algborttagning"],
@@ -14,7 +12,6 @@ const services = [
     link: "/taktvatt",
   },
   {
-    icon: RoofPaintIcon,
     title: "Takmålning",
     description: "UV-beständig takfärg som skyddar betongpannor i minst 10 år. Vackert, hållbart resultat.",
     features: ["10 års garanti", "UV-beständig", "Valfri kulör"],
@@ -24,7 +21,6 @@ const services = [
     link: "/takmalning",
   },
   {
-    icon: FacadeWashIcon,
     title: "Fasadtvätt",
     description: "Skonsam rengöring av alla fasadtyper. Puts, trä, tegel och plåt – anpassad teknik per material.",
     features: ["Alla fasadtyper", "Skonsam teknik", "Algbehandling"],
@@ -34,7 +30,6 @@ const services = [
     link: "/fasadtvatt",
   },
   {
-    icon: RoofShieldIcon,
     title: "Takbehandling",
     description: "Professionell impregnering som förhindrar mossbildning och vatteninträngning. Förlänger takets livslängd.",
     features: ["Vattenavvisande", "Miljövänligt", "Lång hållbarhet"],
@@ -50,7 +45,7 @@ const Services = () => {
     <section id="tjanster" className="py-24 md:py-32 bg-[#fafaf8]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-xl mx-auto mb-16">
-          <p className="text-sm font-semibold text-orange-500 uppercase tracking-widest mb-3">Våra tjänster</p>
+          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">Våra tjänster</p>
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 tracking-tight">
             Komplett takvård
           </h2>
@@ -73,11 +68,6 @@ const Services = () => {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-                <div className={`absolute top-4 left-4 w-10 h-10 rounded-xl flex items-center justify-center ${
-                  service.accent === "orange" ? "bg-orange-500" : "bg-blue-600"
-                }`}>
-                  <service.icon className="w-5 h-5 text-white" />
-                </div>
                 <span className="absolute bottom-4 right-4 bg-white/95 text-gray-900 font-semibold text-sm px-3 py-1.5 rounded-lg">
                   {service.price}
                 </span>
@@ -96,7 +86,7 @@ const Services = () => {
                 </div>
 
                 <span className={`inline-flex items-center text-sm font-semibold gap-2 group-hover:gap-3 transition-all ${
-                  service.accent === "orange" ? "text-orange-500" : "text-blue-600"
+                  service.accent === "orange" ? "text-blue-600" : "text-blue-600"
                 }`}>
                   Läs mer <ArrowRight className="w-4 h-4" />
                 </span>
