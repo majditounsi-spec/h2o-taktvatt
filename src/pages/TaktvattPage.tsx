@@ -71,7 +71,7 @@ const TaktvattPage = () => {
             </div>
 
             <div className="space-y-6">
-              <img src="https://images.pexels.com/photos/5652626/pexels-photo-5652626.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Högtryckstvätt av husfasad" className="w-full rounded-2xl" />
+              <img src="/images/taktvatt-action.jpg" alt="Takvårdare utför taktvätt med specialutrustning" className="w-full rounded-2xl" />
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-blue-50 rounded-xl p-5 text-center">
                   <p className="text-2xl font-bold text-gray-900">2 år</p>
