@@ -9,8 +9,7 @@ const services = [
       "Professionell högtryckstvätt som tar bort mossa, lav och alger. Skyddande plastning under hela processen – inga skador på hus eller trädgård.",
     features: ["Högtryckstvätt", "Mossbehandling", "Algborttagning"],
     price: "Från 15 000 kr",
-    image:
-      "https://images.pexels.com/photos/6432077/pexels-photo-6432077.jpeg?auto=compress&cs=tinysrgb&w=900",
+    image: "/images/taktvatt-service.jpg",
     link: "/taktvatt",
     size: "large",
   },
@@ -55,7 +54,7 @@ const Services = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-14 gap-6">
           <div className="max-w-xl">
-            <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">
+            <p className="text-sm font-semibold text-orange-500 uppercase tracking-widest mb-3">
               Våra tjänster
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 tracking-tight leading-[1.1]">

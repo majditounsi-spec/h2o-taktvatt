@@ -70,7 +70,7 @@ const Process = () => {
                   </div>
                   <span className={`absolute -top-2 -right-2 w-9 h-9 rounded-xl text-white text-sm font-extrabold flex items-center justify-center shadow-lg ${
                     step.color === "orange"
-                      ? "bg-orange-500 shadow-orange-500/25"
+                      ? "bg-orange-500 shadow-blue-600/25"
                       : "bg-blue-600 shadow-blue-600/25"
                   }`}>
                     {step.step}

@@ -11,7 +11,7 @@ const TaktvattPage = () => {
 
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28">
         <div className="absolute inset-0">
-          <img src="https://images.pexels.com/photos/4215110/pexels-photo-4215110.jpeg?auto=compress&cs=tinysrgb&w=1280" alt="Taktvätt med högtryck" className="w-full h-full object-cover" />
+          <img src="/images/taktvatt-service.jpg" alt="Flygvy över villaområde efter taktvätt i Kalmar län" className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0c1a2e]/95 via-[#0c1a2e]/80 to-[#0c1a2e]/60" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -63,7 +63,7 @@ const TaktvattPage = () => {
                   "2 års garanti på utfört arbete",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-orange-500 shrink-0 mt-0.5" />
                     <span className="text-gray-600">{item}</span>
                   </div>
                 ))}

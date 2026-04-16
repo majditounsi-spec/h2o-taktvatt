@@ -61,7 +61,7 @@ const TakmalningPage = () => {
                   "Slutbesiktning med fotodokumentation",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-orange-500 shrink-0 mt-0.5" />
                     <span className="text-gray-600">{item}</span>
                   </div>
                 ))}

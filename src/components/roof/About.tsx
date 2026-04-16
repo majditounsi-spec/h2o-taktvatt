@@ -48,7 +48,7 @@ const About = () => {
 
           {/* Content */}
           <div>
-            <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">Om oss</p>
+            <p className="text-sm font-semibold text-orange-500 uppercase tracking-widest mb-3">Om oss</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 tracking-tight leading-tight">
               Specialister på takvård sedan 2018
             </h2>
@@ -78,7 +78,7 @@ const About = () => {
             <div className="flex flex-wrap gap-x-6 gap-y-2">
               {["Kostnadsfri offert", "Snabb leverans", "Fasta priser"].map((item) => (
                 <div key={item} className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-blue-600" />
+                  <CheckCircle className="w-4 h-4 text-orange-500" />
                   <span className="text-sm font-medium text-gray-600">{item}</span>
                 </div>
               ))}

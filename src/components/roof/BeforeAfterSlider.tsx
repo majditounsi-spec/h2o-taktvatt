@@ -40,7 +40,7 @@ const BeforeAfterSlider = () => {
           >
             {/* After (clean roof) — full background */}
             <img
-              src="/images/result-after-tal.jpg"
+              src="/images/result-before-tal.jpg"
               alt="Tak efter målning – glansigt nytt röd tak"
               className="absolute inset-0 w-full h-full object-cover"
               draggable={false}
@@ -52,7 +52,7 @@ const BeforeAfterSlider = () => {
               style={{ clipPath: `inset(0 ${100 - pos}% 0 0)` }}
             >
               <img
-                src="/images/result-before-tal.jpg"
+                src="/images/result-after-tal.jpg"
                 alt="Tak före målning – slitet orange tak"
                 className="w-full h-full object-cover"
                 draggable={false}

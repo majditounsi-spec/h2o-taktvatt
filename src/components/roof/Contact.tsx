@@ -74,7 +74,7 @@ const Contact = () => {
                   <div>
                     <p className="font-semibold text-gray-900 text-sm">{item.label}</p>
                     {item.href ? (
-                      <a href={item.href} className="text-gray-400 hover:text-orange-500 transition-colors text-sm">{item.value}</a>
+                      <a href={item.href} className="text-gray-400 hover:text-blue-600 transition-colors text-sm">{item.value}</a>
                     ) : (
                       <p className="text-gray-400 text-sm">{item.value}</p>
                     )}
