@@ -4,7 +4,7 @@ const Logo = ({ variant = "dark" }: { variant?: "dark" | "light"; className?: st
       <img
         src="/images/h2o-logo.png"
         alt="H2O Taktvätt"
-        className="h-16 w-auto"
+        className="h-[100px] w-auto"
       />
     </div>
   );
