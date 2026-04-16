@@ -61,7 +61,7 @@ const TakmalningPage = () => {
                   "Slutbesiktning med fotodokumentation",
                 ].map((item) => (
                   <div key={item} className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-orange-500 shrink-0 mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
                     <span className="text-gray-600">{item}</span>
                   </div>
                 ))}
@@ -122,7 +122,7 @@ const TakmalningPage = () => {
             Taktvätt ingår alltid i priset. Behöver du ROT-avdrag? Vi hjälper dig med det.
           </p>
           <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-xl px-8 py-6">
-            <Link to="/kontakt">Boka kostnadsfri besiktning <ArrowRight className="ml-2 w-4 h-4" /></Link>
+            <Link to="/kontakt">Begär kostnadsfri offert <ArrowRight className="ml-2 w-4 h-4" /></Link>
           </Button>
         </div>
       </section>

@@ -12,7 +12,7 @@ const CtaBanner = () => {
           className="w-full h-full object-cover opacity-20"
         />
       </div>
-      <div className="absolute top-10 right-[20%] w-64 h-64 bg-orange-500/5 rounded-full blur-3xl" />
+      <div className="absolute top-10 right-[20%] w-64 h-64 bg-blue-600/5 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <p className="text-sm font-semibold text-orange-400 uppercase tracking-widest mb-4">Redo?</p>
@@ -20,7 +20,7 @@ const CtaBanner = () => {
           Ge ditt tak nytt liv
         </h2>
         <p className="text-white/50 mb-10 max-w-lg mx-auto">
-          Boka en kostnadsfri besiktning. Vi återkommer med offert inom 24 timmar.
+          Begär en kostnadsfri offert. Vi återkommer med förslag inom 24 timmar.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-3 justify-center">

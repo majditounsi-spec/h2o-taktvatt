@@ -22,7 +22,7 @@ const Hero = () => {
       </div>
 
       {/* Subtle accent shapes */}
-      <div className="absolute top-32 right-[15%] w-64 h-64 bg-orange-500/5 rounded-full blur-3xl" />
+      <div className="absolute top-32 right-[15%] w-64 h-64 bg-blue-600/5 rounded-full blur-3xl" />
       <div className="absolute bottom-20 left-[10%] w-48 h-48 bg-blue-500/5 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-32 w-full">
@@ -42,7 +42,7 @@ const Hero = () => {
 
           <p className="text-base sm:text-lg text-white/60 max-w-md mb-10 leading-relaxed font-normal">
             Vi förnyar och skyddar ditt tak i Kalmar län och Skåne.
-            Kostnadsfri besiktning och 10 års garanti.
+            Kostnadsfri offert och 10 års garanti.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-3 mb-16">
@@ -52,7 +52,7 @@ const Hero = () => {
               className="bg-orange-500 hover:bg-orange-600 text-white border-0 text-sm px-7 py-6 rounded-xl font-semibold transition-all hover:-translate-y-0.5"
             >
               <Link to="/kontakt">
-                Kostnadsfri besiktning
+                Begär kostnadsfri offert
                 <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </Button>

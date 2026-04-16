@@ -48,7 +48,7 @@ const About = () => {
 
           {/* Content */}
           <div>
-            <p className="text-sm font-semibold text-orange-500 uppercase tracking-widest mb-3">Om oss</p>
+            <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">Om oss</p>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 tracking-tight leading-tight">
               Specialister på takvård sedan 2018
             </h2>
@@ -58,7 +58,7 @@ const About = () => {
             </p>
             <p className="text-gray-400 mb-8 leading-relaxed">
               Vi rekommenderar att du behandlar taket efter cirka 15 år.
-              Sand i hängrännan betyder att nedbrytningen har börjat – kontakta oss för en kostnadsfri besiktning.
+              Sand i hängrännan betyder att nedbrytningen har börjat – kontakta oss för en kostnadsfri offert.
             </p>
 
             <div className="grid sm:grid-cols-2 gap-3 mb-8">
@@ -76,9 +76,9 @@ const About = () => {
             </div>
 
             <div className="flex flex-wrap gap-x-6 gap-y-2">
-              {["Kostnadsfri besiktning", "Snabb leverans", "Fasta priser"].map((item) => (
+              {["Kostnadsfri offert", "Snabb leverans", "Fasta priser"].map((item) => (
                 <div key={item} className="flex items-center gap-2">
-                  <CheckCircle className="w-4 h-4 text-orange-500" />
+                  <CheckCircle className="w-4 h-4 text-blue-600" />
                   <span className="text-sm font-medium text-gray-600">{item}</span>
                 </div>
               ))}
