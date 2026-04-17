@@ -25,7 +25,7 @@ const TaktvattPage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3">
               <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-xl px-7 py-6">
-                <Link to="/kontakt">Boka besiktning – helt gratis <ArrowRight className="ml-2 w-4 h-4" /></Link>
+                <Link to="/kontakt">Få kostnadsfri offert <ArrowRight className="ml-2 w-4 h-4" /></Link>
               </Button>
             </div>
           </div>
