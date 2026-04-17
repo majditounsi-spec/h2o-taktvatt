@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Phone, Mail, MapPin, Send, Clock, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,6 +9,26 @@ const Contact = () => {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
+  const [visible, setVisible] = useState(false);
+  const formRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = formRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            observer.disconnect();
+          }
+        });
+      },
+      { threshold: 0.15 },
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -106,8 +126,14 @@ const Contact = () => {
           </div>
 
           {/* Form */}
-          <div className="lg:col-span-3">
-            <div className="bg-white rounded-2xl p-7 border border-gray-100">
+          <div className="lg:col-span-3" ref={formRef}>
+            <div
+              className={`bg-white rounded-2xl p-7 border border-gray-100 transition-all duration-700 ease-out ${
+                visible
+                  ? "opacity-100 translate-y-0 scale-100 shadow-xl"
+                  : "opacity-0 translate-y-8 scale-95 shadow-none"
+              }`}
+            >
               {sent ? (
                 <div className="text-center py-12">
                   <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">
