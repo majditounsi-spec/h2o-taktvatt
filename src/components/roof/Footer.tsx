@@ -33,9 +33,9 @@ const Footer = () => {
           </div>
 
           <div>
-            <h4 className="font-semibold text-sm text-white mb-4">Vi finns i</h4>
+            <h4 className="font-semibold text-sm text-white mb-4">Vi utför jobb i</h4>
             <ul className="space-y-2.5">
-              {["Kalmar", "Nybro", "Oskarshamn", "Västervik", "Malmö", "Helsingborg"].map((c) => (
+              {["Kalmar län", "Öland", "Blekinge", "Skåne", "Halland"].map((c) => (
                 <li key={c}><span className="text-blue-200/40 text-sm">{c}</span></li>
               ))}
             </ul>

@@ -11,9 +11,11 @@ const stats = [
 ];
 
 const cities = [
-  "Kalmar", "Nybro", "Oskarshamn", "Västervik",
-  "Borgholm", "Mörbylånga", "Emmaboda", "Torsås",
-  "Malmö", "Lund", "Helsingborg", "Kristianstad",
+  "Kalmar län",
+  "Öland",
+  "Blekinge",
+  "Skåne",
+  "Halland",
 ];
 
 const OmOssPage = () => {
@@ -68,7 +70,7 @@ const OmOssPage = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {stats.map((s) => (
               <div key={s.label} className="text-center p-6 rounded-2xl bg-white border border-gray-100">
-                <s.icon className="w-7 h-7 text-orange-500 mx-auto mb-3" />
+                <s.icon className="w-7 h-7 text-blue-600 mx-auto mb-3" />
                 <p className="text-2xl font-bold text-gray-900">{s.value}</p>
                 <p className="text-sm text-gray-400">{s.label}</p>
               </div>
@@ -82,11 +84,11 @@ const OmOssPage = () => {
       {/* Coverage */}
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4 tracking-tight">Vi finns i Kalmar län & Skåne</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-4 tracking-tight">Vi utför jobb i södra Sverige</h2>
           <p className="text-gray-400 mb-10 max-w-lg mx-auto">
-            Vi är verksamma i Kalmar län och Skåne med omnejd.
+            Vi är verksamma i hela Kalmar län, Öland, Blekinge, Skåne och Halland.
           </p>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3 max-w-3xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 max-w-3xl mx-auto">
             {cities.map((city) => (
               <div key={city} className="flex items-center justify-center gap-2 bg-[#fafaf8] rounded-xl p-3 border border-gray-100">
                 <MapPin className="w-3.5 h-3.5 text-blue-600" />
