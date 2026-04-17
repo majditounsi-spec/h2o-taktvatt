@@ -36,7 +36,7 @@ const services = [
   {
     title: "Anti-alg behandling",
     description: "Impregnering som förhindrar mossbildning och förlänger livslängden.",
-    price: "5 900 kr",
+    price: "Från 5 900 kr",
     image:
       "https://images.pexels.com/photos/5401232/pexels-photo-5401232.jpeg?auto=compress&cs=tinysrgb&w=600",
     link: "/takbehandling",

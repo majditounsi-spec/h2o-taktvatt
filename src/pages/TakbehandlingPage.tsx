@@ -24,7 +24,7 @@ const TakbehandlingPage = () => {
               alger fäster. Det billigaste sättet att skydda ditt tak på lång sikt.
             </p>
             <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-xl px-7 py-6">
-              <Link to="/kontakt">Begär offert – 5 900 kr <ArrowRight className="ml-2 w-4 h-4" /></Link>
+              <Link to="/kontakt">Begär offert – från 5 900 kr <ArrowRight className="ml-2 w-4 h-4" /></Link>
             </Button>
           </div>
         </div>
@@ -92,13 +92,13 @@ const TakbehandlingPage = () => {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="relative order-2 lg:order-1">
               <img
-                src="/images/takmalning-detail.jpg"
-                alt="Närbild på tak efter anti-alg behandling"
-                className="w-full rounded-2xl"
+                src="/images/taktvatt-action.jpg"
+                alt="Takvårdare behandlar taket med anti-alg kemmedel i skyddsutrustning"
+                className="w-full h-[480px] object-cover rounded-2xl"
               />
               <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl p-5 shadow-xl border border-gray-100 hidden sm:block">
-                <p className="text-3xl font-bold text-gray-900">5 900 kr</p>
-                <p className="text-sm text-gray-500">Fast pris för villa</p>
+                <p className="text-3xl font-bold text-gray-900">Från 5 900 kr</p>
+                <p className="text-sm text-gray-500">För villa</p>
               </div>
             </div>
 
