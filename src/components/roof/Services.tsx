@@ -8,7 +8,7 @@ const services = [
     description:
       "Professionell högtryckstvätt som tar bort mossa, lav och alger. Skyddande plastning under hela processen – inga skador på hus eller trädgård.",
     features: ["Högtryckstvätt", "Mossbehandling", "Algborttagning"],
-    price: "Från 15 000 kr",
+    price: "Från 14 900 kr",
     image: "/images/taktvatt-service.jpg",
     link: "/taktvatt",
     size: "large",
@@ -19,7 +19,7 @@ const services = [
     description:
       "UV-beständig takfärg som skyddar betongpannor i minst 10 år. Vackert, hållbart resultat.",
     features: ["UV-beständig", "Valfri kulör"],
-    price: "Från 30 000 kr",
+    price: "Från 24 900 kr",
     image: "/images/takmalning-hero.jpg",
     link: "/takmalning",
     size: "wide",
@@ -27,19 +27,28 @@ const services = [
   {
     title: "Fasadtvätt",
     description: "Skonsam rengöring av alla fasadtyper – puts, trä, tegel och plåt.",
-    price: "Från 12 000 kr",
+    price: "Från 12 900 kr",
     image:
       "https://images.pexels.com/photos/5652626/pexels-photo-5652626.jpeg?auto=compress&cs=tinysrgb&w=600",
     link: "/fasadtvatt",
     size: "small",
   },
   {
-    title: "Takbehandling",
+    title: "Anti-alg behandling",
     description: "Impregnering som förhindrar mossbildning och förlänger livslängden.",
-    price: "Från 10 000 kr",
+    price: "5 900 kr",
     image:
       "https://images.pexels.com/photos/5401232/pexels-photo-5401232.jpeg?auto=compress&cs=tinysrgb&w=600",
     link: "/takbehandling",
+    size: "small",
+  },
+  {
+    title: "Marktvätt",
+    description: "Rengöring av uppfart, altan och stenplattor – som nya igen.",
+    price: "Från 3 900 kr",
+    image:
+      "https://images.pexels.com/photos/5657244/pexels-photo-5657244.jpeg?auto=compress&cs=tinysrgb&w=600",
+    link: "/kontakt",
     size: "small",
   },
 ];
@@ -64,16 +73,16 @@ const Services = () => {
             </h2>
           </div>
           <p className="text-gray-500 max-w-xs leading-relaxed">
-            Fyra specialiserade tjänster – alla med samma höga kvalitet och 10 års garanti.
+            Fem specialiserade tjänster – alla med samma höga kvalitet och 10 års garanti.
           </p>
         </div>
 
         {/* Bento grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-4 md:gap-5 md:h-[640px]">
+        <div className="grid grid-cols-1 md:grid-cols-6 md:grid-rows-2 gap-4 md:gap-5 md:h-[640px]">
           {/* Large tile — Taktvätt */}
           <Link
             to={large.link}
-            className="group relative md:col-span-2 md:row-span-2 rounded-3xl overflow-hidden bg-gray-900 min-h-[440px] md:min-h-0"
+            className="group relative md:col-span-3 md:row-span-2 rounded-3xl overflow-hidden bg-gray-900 min-h-[440px] md:min-h-0"
           >
             <img
               src={large.image}
@@ -120,7 +129,7 @@ const Services = () => {
           {/* Wide tile — Takmålning */}
           <Link
             to={wide.link}
-            className="group relative md:col-span-2 rounded-3xl overflow-hidden bg-white border border-gray-100 hover:border-gray-200 hover:shadow-xl transition-all duration-500 min-h-[260px]"
+            className="group relative md:col-span-3 rounded-3xl overflow-hidden bg-white border border-gray-100 hover:border-gray-200 hover:shadow-xl transition-all duration-500 min-h-[260px]"
           >
             <div className="h-full flex flex-col md:flex-row">
               <div className="relative md:w-2/5 h-40 md:h-full overflow-hidden shrink-0">

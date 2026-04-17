@@ -24,7 +24,7 @@ const TakbehandlingPage = () => {
               alger fäster. Det billigaste sättet att skydda ditt tak på lång sikt.
             </p>
             <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-xl px-7 py-6">
-              <Link to="/kontakt">Begär offert – från 10 000 kr <ArrowRight className="ml-2 w-4 h-4" /></Link>
+              <Link to="/kontakt">Begär offert – 5 900 kr <ArrowRight className="ml-2 w-4 h-4" /></Link>
             </Button>
           </div>
         </div>
@@ -86,7 +86,65 @@ const TakbehandlingPage = () => {
         </div>
       </section>
 
-      <section className="py-16 bg-[#fafaf8]">
+      {/* Anti-alg behandling section */}
+      <section className="py-20 md:py-28 bg-[#fafaf8]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="relative order-2 lg:order-1">
+              <img
+                src="/images/takmalning-detail.jpg"
+                alt="Närbild på tak efter anti-alg behandling"
+                className="w-full rounded-2xl"
+              />
+              <div className="absolute -bottom-5 -right-5 bg-white rounded-2xl p-5 shadow-xl border border-gray-100 hidden sm:block">
+                <p className="text-3xl font-bold text-gray-900">5 900 kr</p>
+                <p className="text-sm text-gray-500">Fast pris för villa</p>
+              </div>
+            </div>
+
+            <div className="order-1 lg:order-2">
+              <p className="text-sm font-semibold text-orange-500 uppercase tracking-widest mb-3">
+                Anti-alg behandling
+              </p>
+              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6 tracking-tight leading-tight">
+                Stoppa mossa och alger innan de får fäste
+              </h2>
+              <p className="text-gray-500 mb-5 leading-relaxed">
+                Anti-alg behandlingen tränger in i ytan på takpannorna och dödar mikroorganismer
+                som mossa, alger och lav. Behandlingen fungerar även förebyggande – ny påväxt
+                får svårt att etablera sig på ett behandlat tak.
+              </p>
+              <p className="text-gray-500 mb-8 leading-relaxed">
+                Perfekt för dig som har ett tak som precis börjat visa tecken på påväxt, men inte
+                ännu behöver en full taktvätt. En prisvärd åtgärd som förlänger tiden mellan
+                tvättarna rejält.
+              </p>
+
+              <div className="grid sm:grid-cols-2 gap-3 mb-8">
+                {[
+                  "Dödar mossa, alger och lav",
+                  "Förebygger ny påväxt",
+                  "Miljömärkt produkt",
+                  "Klart på 1 dag",
+                  "Ingen avspolning behövs",
+                  "Fast pris utan överraskningar",
+                ].map((item) => (
+                  <div key={item} className="flex items-start gap-2.5">
+                    <CheckCircle className="w-5 h-5 text-orange-500 shrink-0 mt-0.5" />
+                    <span className="text-sm text-gray-600">{item}</span>
+                  </div>
+                ))}
+              </div>
+
+              <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-xl px-7 py-6">
+                <Link to="/kontakt">Boka anti-alg behandling <ArrowRight className="ml-2 w-4 h-4" /></Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-16">
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">Bäst tillsammans med taktvätt</h2>
           <p className="text-gray-500 mb-8 leading-relaxed">

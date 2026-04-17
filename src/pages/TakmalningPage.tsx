@@ -24,7 +24,7 @@ const TakmalningPage = () => {
               Vi använder UV-beständig takfärg som tål det småländska klimatet.
             </p>
             <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-xl px-7 py-6">
-              <Link to="/kontakt">Begär offert – från 30 000 kr <ArrowRight className="ml-2 w-4 h-4" /></Link>
+              <Link to="/kontakt">Begär offert – från 24 900 kr <ArrowRight className="ml-2 w-4 h-4" /></Link>
             </Button>
           </div>
         </div>
