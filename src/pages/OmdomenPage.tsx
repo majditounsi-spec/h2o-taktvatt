@@ -5,7 +5,15 @@ import { Star, StarHalf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
+import { useSeo } from "@/hooks/useSeo";
+
 const OmdomenPage = () => {
+  useSeo({
+    title: "Omdömen – 4,7 av 5 på Google",
+    description:
+      "Läs verifierade Google-recensioner om H2O Taktvätt. 4,7 av 5 i betyg baserat på kunder i Kalmar län, Öland, Blekinge, Skåne och Halland.",
+  });
+
   return (
     <div className="min-h-screen">
       <Header />

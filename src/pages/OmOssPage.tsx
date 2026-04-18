@@ -18,7 +18,15 @@ const cities = [
   "Halland",
 ];
 
+import { useSeo } from "@/hooks/useSeo";
+
 const OmOssPage = () => {
+  useSeo({
+    title: "Om oss – Familjeföretag sedan 2018",
+    description:
+      "H2O Taktvätt är ett familjeföretag från Kalmar län som sedan 2018 tvättat och målat över 3 000 tak. Vi utför jobb i Kalmar län, Öland, Blekinge, Skåne och Halland.",
+  });
+
   return (
     <div className="min-h-screen">
       <Header />

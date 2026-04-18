@@ -4,7 +4,15 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import { useSeo } from "@/hooks/useSeo";
+
 const FasadtvattPage = () => {
+  useSeo({
+    title: "Fasadtvätt från 12 900 kr – Skonsam rengöring av alla fasadtyper",
+    description:
+      "Professionell fasadtvätt för puts, trä, tegel och plåt. Skonsam teknik och algbehandling. Från 12 900 kr i Kalmar län, Öland, Blekinge, Skåne och Halland.",
+  });
+
   return (
     <div className="min-h-screen">
       <Header />

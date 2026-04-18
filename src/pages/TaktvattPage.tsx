@@ -4,7 +4,15 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import { useSeo } from "@/hooks/useSeo";
+
 const TaktvattPage = () => {
+  useSeo({
+    title: "Taktvätt från 14 900 kr – Professionell högtryckstvätt",
+    description:
+      "Professionell taktvätt med högtryck i Kalmar län, Öland, Blekinge, Skåne och Halland. Tar bort mossa, lav och alger. Skyddande plastning ingår. Från 14 900 kr.",
+  });
+
   return (
     <div className="min-h-screen">
       <Header />

@@ -1,8 +1,14 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
+import { useSeo } from "@/hooks/useSeo";
 
 const NotFound = () => {
   const location = useLocation();
+
+  useSeo({
+    title: "404 – Sidan kunde inte hittas",
+    description: "Sidan du sökte finns inte längre. Gå tillbaka till startsidan.",
+  });
 
   useEffect(() => {
     console.error("404 Error: User attempted to access non-existent route:", location.pathname);

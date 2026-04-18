@@ -4,7 +4,15 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import { useSeo } from "@/hooks/useSeo";
+
 const TakbehandlingPage = () => {
+  useSeo({
+    title: "Anti-alg behandling från 5 900 kr – Impregnering av tak",
+    description:
+      "Anti-alg behandling och impregnering som gör taket vattenavvisande och förhindrar mossa. Från 5 900 kr. Miljövänligt och professionellt i södra Sverige.",
+  });
+
   return (
     <div className="min-h-screen">
       <Header />

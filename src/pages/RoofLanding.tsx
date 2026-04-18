@@ -8,8 +8,15 @@ import Testimonials from "@/components/roof/Testimonials";
 import CtaBanner from "@/components/roof/CtaBanner";
 import Contact from "@/components/roof/Contact";
 import Footer from "@/components/roof/Footer";
+import { useSeo } from "@/hooks/useSeo";
 
 const RoofLanding = () => {
+  useSeo({
+    title: "H2O Taktvätt & Takmålning – Kalmar län, Öland, Blekinge, Skåne & Halland",
+    description:
+      "Professionell taktvätt, takmålning, fasadtvätt och anti-alg behandling med 10 års garanti. Kostnadsfri offert i Kalmar län, Öland, Blekinge, Skåne och Halland.",
+  });
+
   return (
     <div className="min-h-screen">
       <Header />

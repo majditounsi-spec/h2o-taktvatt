@@ -6,6 +6,7 @@ const Hero = () => {
   return (
     <section
       id="hem"
+      aria-label="Hem – Professionell taktvätt och takmålning"
       className="relative min-h-screen flex items-center overflow-hidden bg-[#0a1530]"
     >
       {/* Layered gradient background using logo blues */}

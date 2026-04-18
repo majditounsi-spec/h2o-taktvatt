@@ -10,10 +10,10 @@ const Contact = () => {
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
   const [visible, setVisible] = useState(false);
-  const formRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    const el = formRef.current;
+    const el = sectionRef.current;
     if (!el) return;
     const observer = new IntersectionObserver(
       (entries) => {
@@ -24,7 +24,7 @@ const Contact = () => {
           }
         });
       },
-      { threshold: 0.15 },
+      { threshold: 0.12 },
     );
     observer.observe(el);
     return () => observer.disconnect();
@@ -80,12 +80,18 @@ const Contact = () => {
   const contactInfo = [
     { icon: Phone, label: "Telefon", value: "070-123 45 67", href: "tel:+46701234567" },
     { icon: Mail, label: "E-post", value: "info@h2otaktvatt.se", href: "mailto:info@h2otaktvatt.se" },
-    { icon: MapPin, label: "Verksamma i", value: "Kalmar län & Skåne" },
+    { icon: MapPin, label: "Verksamma i", value: "Kalmar län, Öland, Blekinge, Skåne & Halland" },
     { icon: Clock, label: "Öppettider", value: "Mån–Fre: 07–17 | Lör: 08–14" },
   ];
 
   return (
-    <section id="kontakt" className="py-24 md:py-32 bg-[#fafaf8]">
+    <section
+      id="kontakt"
+      ref={sectionRef}
+      className={`py-24 md:py-32 bg-[#fafaf8] transition-all duration-1000 ease-out ${
+        visible ? "opacity-100 translate-y-0 scale-100" : "opacity-0 translate-y-16 scale-[0.97]"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-xl mx-auto mb-14">
           <p className="text-sm font-semibold text-orange-500 uppercase tracking-widest mb-3">Kontakt</p>
@@ -126,14 +132,8 @@ const Contact = () => {
           </div>
 
           {/* Form */}
-          <div className="lg:col-span-3" ref={formRef}>
-            <div
-              className={`bg-white rounded-2xl p-7 border border-gray-100 transition-all duration-700 ease-out ${
-                visible
-                  ? "opacity-100 translate-y-0 scale-100 shadow-xl"
-                  : "opacity-0 translate-y-8 scale-95 shadow-none"
-              }`}
-            >
+          <div className="lg:col-span-3">
+            <div className="bg-white rounded-2xl p-7 border border-gray-100 shadow-xl">
               {sent ? (
                 <div className="text-center py-12">
                   <div className="w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mx-auto mb-4">

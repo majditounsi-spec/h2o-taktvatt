@@ -4,7 +4,15 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
+import { useSeo } from "@/hooks/useSeo";
+
 const TakmalningPage = () => {
+  useSeo({
+    title: "Takmålning från 24 900 kr – 10 års garanti",
+    description:
+      "Takmålning med UV-beständig färg och 10 års garanti. Förläng takets livslängd med 15–20 år. Fri kulör och kostnadsfri offert. Kalmar län, Öland, Blekinge, Skåne & Halland.",
+  });
+
   return (
     <div className="min-h-screen">
       <Header />
