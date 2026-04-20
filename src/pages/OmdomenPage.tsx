@@ -42,10 +42,10 @@ const OmdomenPage = () => {
 
       <Testimonials />
 
-      <section className="py-16 bg-blue-600">
+      <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
-          <h2 className="text-2xl font-bold text-white mb-4">Vill du bli vår nästa nöjda kund?</h2>
-          <p className="text-blue-100/60 mb-8">Ring oss eller fyll i formuläret – besiktningen är alltid kostnadsfri.</p>
+          <h2 className="text-2xl font-bold text-gray-900 mb-4">Vill du bli vår nästa nöjda kund?</h2>
+          <p className="text-gray-500 mb-8">Ring oss eller fyll i formuläret – besiktningen är alltid kostnadsfri.</p>
           <Button asChild size="lg" className="bg-orange-500 hover:bg-orange-600 text-white rounded-xl px-8 py-6">
             <Link to="/kontakt">Kontakta oss</Link>
           </Button>
