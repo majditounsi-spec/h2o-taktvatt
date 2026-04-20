@@ -4,12 +4,19 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { supabase } from "@/integrations/supabase/client";
+import ReCAPTCHA from "react-google-recaptcha";
+
+// Replace with your real site key from console.cloud.google.com/apis/credentials
+// Test key (always passes, use only during development):
+const RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
 
 const Contact = () => {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
   const [visible, setVisible] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
@@ -32,6 +39,12 @@ const Contact = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+
+    if (!captchaToken) {
+      setError("Vänligen bekräfta att du inte är en robot.");
+      return;
+    }
+
     setSending(true);
     setError("");
 
@@ -62,16 +75,22 @@ const Contact = () => {
       // 2. Also save to Supabase (backup / DB record)
       const { error: dbError } = await supabase.from("inquiries").insert(inquiry);
 
-      if (!netlifyRes.ok && dbError) {
+      if (dbError && !netlifyRes.ok) {
         console.error("Submit failed:", { netlifyRes, dbError });
         setError("Något gick fel. Ring oss istället på 070-123 45 67.");
+        recaptchaRef.current?.reset();
+        setCaptchaToken(null);
       } else {
         setSent(true);
         form.reset();
+        recaptchaRef.current?.reset();
+        setCaptchaToken(null);
       }
     } catch (err) {
       console.error(err);
       setError("Kunde inte skicka. Kontrollera din internetanslutning eller ring oss.");
+      recaptchaRef.current?.reset();
+      setCaptchaToken(null);
     } finally {
       setSending(false);
     }
@@ -199,11 +218,27 @@ const Contact = () => {
                     <Textarea name="message" placeholder="Beskriv ditt tak och vad du behöver hjälp med..." rows={4} className="rounded-xl border-gray-200 resize-none" />
                   </div>
 
+                  {/* reCAPTCHA v2 */}
+                  <div className="flex justify-center">
+                    <ReCAPTCHA
+                      ref={recaptchaRef}
+                      sitekey={RECAPTCHA_SITE_KEY}
+                      onChange={(token) => setCaptchaToken(token)}
+                      onExpired={() => setCaptchaToken(null)}
+                      hl="sv"
+                    />
+                  </div>
+
                   {error && (
                     <div className="bg-red-50 text-red-700 text-sm p-3 rounded-xl">{error}</div>
                   )}
 
-                  <Button type="submit" size="lg" disabled={sending} className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-xl py-6 text-sm font-semibold disabled:opacity-50">
+                  <Button
+                    type="submit"
+                    size="lg"
+                    disabled={sending || !captchaToken}
+                    className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-xl py-6 text-sm font-semibold disabled:opacity-50"
+                  >
                     <Send className="w-4 h-4 mr-2" />
                     {sending ? "Skickar..." : "Skicka offertförfrågan"}
                   </Button>

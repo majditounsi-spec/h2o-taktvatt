@@ -40,7 +40,7 @@ const TakmalningPage = () => {
 
       <section className="py-20 md:py-28">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-16 items-stretch">
+          <div className="grid lg:grid-cols-2 gap-16 items-start">
             <div>
               <h2 className="text-3xl font-bold text-gray-900 mb-6 tracking-tight">När är det dags att måla om taket?</h2>
               <p className="text-gray-500 mb-5 leading-relaxed">
@@ -77,11 +77,13 @@ const TakmalningPage = () => {
             </div>
 
             <div className="flex flex-col gap-6">
-              <img
-                src="/images/takmalning-detail.jpg"
-                alt="Närbild på takmålning – före och efter på takpannor"
-                className="w-full flex-1 min-h-[400px] object-cover rounded-2xl"
-              />
+              <div className="overflow-hidden rounded-2xl" style={{ maxHeight: "420px" }}>
+                <img
+                  src="/images/takmalning-detail.jpg"
+                  alt="Närbild på takmålning – före och efter på takpannor"
+                  className="w-full h-full object-cover object-top"
+                />
+              </div>
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-orange-50 rounded-xl p-5 text-center">
                   <p className="text-2xl font-bold text-gray-900">10 år</p>

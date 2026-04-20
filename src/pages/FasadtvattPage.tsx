@@ -77,7 +77,7 @@ const FasadtvattPage = () => {
             </div>
 
             <div className="space-y-6">
-              <img src="/images/takmalning-service.jpg" alt="Takvårdare i skyddsutrustning från sidan på svenskt tegeltak" className="w-full rounded-2xl" />
+              <img src="/images/fasadtvatt-hero.webp" alt="Professionell fasadtvätt på villa" className="w-full rounded-2xl object-cover" />
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-blue-50 rounded-xl p-5 text-center">
                   <p className="text-2xl font-bold text-gray-900">Garanti</p>

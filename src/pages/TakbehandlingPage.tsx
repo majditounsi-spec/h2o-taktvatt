@@ -78,7 +78,7 @@ const TakbehandlingPage = () => {
             </div>
 
             <div className="space-y-6">
-              <img src="https://images.pexels.com/photos/2102587/pexels-photo-2102587.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Takpannor" className="w-full rounded-2xl" />
+              <img src="/images/takbehandling-detail.jpg" alt="Rött tegeltakstak på villa som impregneras och behandlas" className="w-full rounded-2xl object-cover" />
               <div className="grid grid-cols-2 gap-4">
                 <div className="bg-orange-50 rounded-xl p-5 text-center">
                   <p className="text-2xl font-bold text-gray-900">5+ år</p>

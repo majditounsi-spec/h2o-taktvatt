@@ -1,5 +1,6 @@
 import Header from "@/components/roof/Header";
 import Hero from "@/components/roof/Hero";
+import Faq from "@/components/roof/Faq";
 import Services from "@/components/roof/Services";
 import Process from "@/components/roof/Process";
 import BeforeAfterSlider from "@/components/roof/BeforeAfterSlider";
@@ -22,6 +23,7 @@ const RoofLanding = () => {
       <Header />
       <main>
         <Hero />
+        <Faq />
         <Services />
         <Process />
         <BeforeAfterSlider />
