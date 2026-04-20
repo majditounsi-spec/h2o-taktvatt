@@ -47,7 +47,7 @@ const services = [
     description: "Rengöring av uppfart, altan och stenplattor – som nya igen.",
     price: "Från 3 900 kr",
     image:
-      "https://images.pexels.com/photos/5657244/pexels-photo-5657244.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "/images/marktvatt.webp",
     link: "/kontakt",
     size: "small",
   },

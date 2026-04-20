@@ -120,9 +120,9 @@ const Header = () => {
             </Button>
             <button className="lg:hidden p-2" onClick={() => setMobileOpen(!mobileOpen)}>
               {mobileOpen ? (
-                <X className={`w-6 h-6 text-white`} />
+                <X className={`w-6 h-6 ${solid ? "text-gray-800" : "text-white"}`} />
               ) : (
-                <Menu className={`w-6 h-6 text-white`} />
+                <Menu className={`w-6 h-6 ${solid ? "text-gray-800" : "text-white"}`} />
               )}
             </button>
           </div>
