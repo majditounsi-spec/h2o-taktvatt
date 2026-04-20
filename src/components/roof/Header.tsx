@@ -111,9 +111,9 @@ const Header = () => {
           </nav>
 
           <div className="flex items-center gap-4">
-            <a href="tel:+46701234567" className={`hidden md:flex items-center gap-2 text-sm font-semibold ${solid ? "text-gray-700" : "text-white"}`}>
+            <a href="tel:+46790555130" className={`hidden md:flex items-center gap-2 text-sm font-semibold ${solid ? "text-gray-700" : "text-white"}`}>
               <Phone className="w-4 h-4" />
-              070-123 45 67
+              079-055 51 30
             </a>
             <Button asChild className="hidden sm:flex bg-orange-500 hover:bg-orange-600 text-white border-0 rounded-xl px-5 h-10 text-sm font-semibold">
               <Link to="/kontakt">Fri offert</Link>

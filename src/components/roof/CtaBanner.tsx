@@ -30,8 +30,8 @@ const CtaBanner = () => {
             </Link>
           </Button>
           <Button asChild size="lg" variant="outline" className="border-white/15 text-white hover:bg-white/5 text-sm px-8 py-6 rounded-xl bg-transparent">
-            <a href="tel:+46701234567">
-              <Phone className="mr-2 w-4 h-4" /> 070-123 45 67
+            <a href="tel:+46790555130">
+              <Phone className="mr-2 w-4 h-4" /> 079-055 51 30
             </a>
           </Button>
         </div>

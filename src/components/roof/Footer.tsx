@@ -46,11 +46,11 @@ const Footer = () => {
             <ul className="space-y-3">
               <li className="flex gap-3">
                 <Phone className="w-4 h-4 text-orange-400 mt-0.5 shrink-0" />
-                <a href="tel:+46701234567" className="text-blue-200/40 hover:text-white text-sm transition-colors">070-123 45 67</a>
+                <a href="tel:+46790555130" className="text-blue-200/40 hover:text-white text-sm transition-colors">079-055 51 30</a>
               </li>
               <li className="flex gap-3">
                 <Mail className="w-4 h-4 text-orange-400 mt-0.5 shrink-0" />
-                <a href="mailto:info@h2otaktvatt.se" className="text-blue-200/40 hover:text-white text-sm transition-colors">info@h2otaktvatt.se</a>
+                <a href="mailto:kontakt@h2otaktvatt.se" className="text-blue-200/40 hover:text-white text-sm transition-colors">kontakt@h2otaktvatt.se</a>
               </li>
               <li className="flex gap-3">
                 <MapPin className="w-4 h-4 text-orange-400 mt-0.5 shrink-0" />

@@ -77,7 +77,7 @@ const Contact = () => {
 
       if (dbError && !netlifyRes.ok) {
         console.error("Submit failed:", { netlifyRes, dbError });
-        setError("Något gick fel. Ring oss istället på 070-123 45 67.");
+        setError("Något gick fel. Ring oss istället på 079-055 51 30.");
         recaptchaRef.current?.reset();
         setCaptchaToken(null);
       } else {
@@ -97,8 +97,8 @@ const Contact = () => {
   };
 
   const contactInfo = [
-    { icon: Phone, label: "Telefon", value: "070-123 45 67", href: "tel:+46701234567" },
-    { icon: Mail, label: "E-post", value: "info@h2otaktvatt.se", href: "mailto:info@h2otaktvatt.se" },
+    { icon: Phone, label: "Telefon", value: "079-055 51 30", href: "tel:+46790555130" },
+    { icon: Mail, label: "E-post", value: "kontakt@h2otaktvatt.se", href: "mailto:kontakt@h2otaktvatt.se" },
     { icon: MapPin, label: "Verksamma i", value: "Kalmar län, Öland, Blekinge, Skåne & Halland" },
     { icon: Clock, label: "Öppettider", value: "Mån–Fre: 07–17 | Lör: 08–14" },
   ];
@@ -144,7 +144,7 @@ const Contact = () => {
             <div className="bg-orange-500 rounded-2xl p-6 text-white">
               <h3 className="text-lg font-bold mb-1">Kostnadsfri besiktning</h3>
               <p className="text-orange-100/80 text-sm mb-4">Vi åker ut och tittar på ditt tak utan kostnad.</p>
-              <a href="tel:+46701234567" className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors">
+              <a href="tel:+46790555130" className="inline-flex items-center gap-2 bg-white/20 hover:bg-white/30 rounded-xl px-4 py-2.5 text-sm font-semibold transition-colors">
                 <Phone className="w-4 h-4" /> Ring oss direkt
               </a>
             </div>

@@ -165,7 +165,7 @@ const Hero = () => {
               variant="outline"
               className="border-white/20 text-white hover:bg-white/10 text-sm px-7 py-6 rounded-xl bg-white/5 backdrop-blur-sm font-medium"
             >
-              <a href="tel:+46701234567">
+              <a href="tel:+46790555130">
                 <Phone className="mr-2 w-4 h-4" />
                 Ring oss
               </a>

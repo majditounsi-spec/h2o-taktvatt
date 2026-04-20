@@ -109,7 +109,7 @@ const Faq = () => {
             Allt du vill veta
           </h2>
           <p className="text-white/50 mt-3 max-w-md mx-auto text-sm">
-            Hittar du inte svaret du söker? Ring oss direkt på 070-123 45 67.
+            Hittar du inte svaret du söker? Ring oss direkt på 079-055 51 30.
           </p>
         </div>
 

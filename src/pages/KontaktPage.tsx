@@ -7,7 +7,7 @@ const KontaktPage = () => {
   useSeo({
     title: "Kontakt – Begär kostnadsfri offert",
     description:
-      "Kontakta H2O Taktvätt för kostnadsfri offert på taktvätt, takmålning, fasadtvätt eller anti-alg behandling. Ring 070-123 45 67 eller fyll i formuläret.",
+      "Kontakta H2O Taktvätt för kostnadsfri offert på taktvätt, takmålning, fasadtvätt eller anti-alg behandling. Ring 079-055 51 30 eller fyll i formuläret.",
   });
 
   return (

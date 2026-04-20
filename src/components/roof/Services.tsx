@@ -87,9 +87,9 @@ const Services = () => {
             <img
               src={large.image}
               alt={large.title}
-              className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-90 group-hover:scale-105 transition-all duration-700"
+              className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-black/10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
 
             <div className="relative z-10 h-full flex flex-col justify-between p-8 md:p-10">
               <div className="flex items-start justify-between">
