@@ -6,7 +6,6 @@ import Process from "@/components/roof/Process";
 import BeforeAfterSlider from "@/components/roof/BeforeAfterSlider";
 import About from "@/components/roof/About";
 import Testimonials from "@/components/roof/Testimonials";
-import Tv4Section from "@/components/roof/Tv4Section";
 import CtaBanner from "@/components/roof/CtaBanner";
 import Contact from "@/components/roof/Contact";
 import Footer from "@/components/roof/Footer";
@@ -30,7 +29,6 @@ const RoofLanding = () => {
         <BeforeAfterSlider />
         <About />
         <Testimonials />
-        <Tv4Section />
         <CtaBanner />
         <Contact />
       </main>
