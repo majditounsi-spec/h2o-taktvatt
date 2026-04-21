@@ -4,6 +4,8 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { useEffect, lazy, Suspense } from "react";
+import { GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
+import { RECAPTCHA_V3_SITE_KEY } from "@/lib/recaptcha";
 import RoofLanding from "./pages/RoofLanding";
 import NotFound from "./pages/NotFound";
 
@@ -34,32 +36,37 @@ const PageLoader = () => (
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter basename={import.meta.env.BASE_URL}>
-        <ScrollToTop />
-        <Suspense fallback={<PageLoader />}>
-          <Routes>
-            <Route path="/" element={<RoofLanding />} />
-            <Route path="/taktvatt" element={<TaktvattPage />} />
-            <Route path="/takmalning" element={<TakmalningPage />} />
-            <Route path="/fasadtvatt" element={<FasadtvattPage />} />
-            <Route path="/takbehandling" element={<TakbehandlingPage />} />
-            <Route path="/om-oss" element={<OmOssPage />} />
-            <Route path="/omdomen" element={<OmdomenPage />} />
-            <Route path="/kontakt" element={<KontaktPage />} />
-            <Route path="/admin/login" element={<AdminLogin />} />
-            <Route path="/admin" element={
-              <Suspense fallback={<PageLoader />}>
-                <AuthGuard><AdminDashboard /></AuthGuard>
-              </Suspense>
-            } />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
-    </TooltipProvider>
+    <GoogleReCaptchaProvider
+      reCaptchaKey={RECAPTCHA_V3_SITE_KEY}
+      scriptProps={{ async: true, defer: true, appendTo: "head" }}
+    >
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter basename={import.meta.env.BASE_URL}>
+          <ScrollToTop />
+          <Suspense fallback={<PageLoader />}>
+            <Routes>
+              <Route path="/" element={<RoofLanding />} />
+              <Route path="/taktvatt" element={<TaktvattPage />} />
+              <Route path="/takmalning" element={<TakmalningPage />} />
+              <Route path="/fasadtvatt" element={<FasadtvattPage />} />
+              <Route path="/takbehandling" element={<TakbehandlingPage />} />
+              <Route path="/om-oss" element={<OmOssPage />} />
+              <Route path="/omdomen" element={<OmdomenPage />} />
+              <Route path="/kontakt" element={<KontaktPage />} />
+              <Route path="/admin/login" element={<AdminLogin />} />
+              <Route path="/admin" element={
+                <Suspense fallback={<PageLoader />}>
+                  <AuthGuard><AdminDashboard /></AuthGuard>
+                </Suspense>
+              } />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </TooltipProvider>
+    </GoogleReCaptchaProvider>
   </QueryClientProvider>
 );
 

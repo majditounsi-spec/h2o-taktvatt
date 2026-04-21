@@ -4,20 +4,15 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { supabase } from "@/integrations/supabase/client";
-import ReCAPTCHA from "react-google-recaptcha";
-
-// Replace with your real site key from console.cloud.google.com/apis/credentials
-// Test key (always passes, use only during development):
-const RECAPTCHA_SITE_KEY = "6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const Contact = () => {
   const [sending, setSending] = useState(false);
   const [sent, setSent] = useState(false);
   const [error, setError] = useState("");
   const [visible, setVisible] = useState(false);
-  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
-  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const sectionRef = useRef<HTMLElement>(null);
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -40,8 +35,8 @@ const Contact = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (!captchaToken) {
-      setError("Vänligen bekräfta att du inte är en robot.");
+    if (!executeRecaptcha) {
+      setError("Säkerhetsverifieringen är inte redo än. Försök igen om en stund.");
       return;
     }
 
@@ -51,6 +46,8 @@ const Contact = () => {
     const form = e.currentTarget;
     const data = new FormData(form);
 
+    const captchaToken = await executeRecaptcha("offertforfragan");
+
     const inquiry = {
       name: data.get("name") as string,
       phone: data.get("phone") as string,
@@ -58,6 +55,7 @@ const Contact = () => {
       address: (data.get("address") as string) || null,
       service: (data.get("service") as string) || null,
       message: (data.get("message") as string) || null,
+      captcha_token: captchaToken,
     };
 
     try {
@@ -65,6 +63,7 @@ const Contact = () => {
       const netlifyBody = new URLSearchParams();
       netlifyBody.append("form-name", "offertforfragan");
       data.forEach((value, key) => netlifyBody.append(key, value as string));
+      netlifyBody.append("g-recaptcha-response", captchaToken);
 
       const netlifyRes = await fetch("/", {
         method: "POST",
@@ -78,19 +77,13 @@ const Contact = () => {
       if (dbError && !netlifyRes.ok) {
         console.error("Submit failed:", { netlifyRes, dbError });
         setError("Något gick fel. Ring oss istället på 079-055 51 30.");
-        recaptchaRef.current?.reset();
-        setCaptchaToken(null);
       } else {
         setSent(true);
         form.reset();
-        recaptchaRef.current?.reset();
-        setCaptchaToken(null);
       }
     } catch (err) {
       console.error(err);
       setError("Kunde inte skicka. Kontrollera din internetanslutning eller ring oss.");
-      recaptchaRef.current?.reset();
-      setCaptchaToken(null);
     } finally {
       setSending(false);
     }
@@ -170,6 +163,7 @@ const Contact = () => {
                   name="offertforfragan"
                   method="POST"
                   data-netlify="true"
+                  data-netlify-recaptcha="true"
                   netlify-honeypot="bot-field"
                   className="space-y-4"
                 >
@@ -218,17 +212,6 @@ const Contact = () => {
                     <Textarea name="message" placeholder="Beskriv ditt tak och vad du behöver hjälp med..." rows={4} className="rounded-xl border-gray-200 resize-none" />
                   </div>
 
-                  {/* reCAPTCHA v2 */}
-                  <div className="flex justify-center">
-                    <ReCAPTCHA
-                      ref={recaptchaRef}
-                      sitekey={RECAPTCHA_SITE_KEY}
-                      onChange={(token) => setCaptchaToken(token)}
-                      onExpired={() => setCaptchaToken(null)}
-                      hl="sv"
-                    />
-                  </div>
-
                   {error && (
                     <div className="bg-red-50 text-red-700 text-sm p-3 rounded-xl">{error}</div>
                   )}
@@ -236,7 +219,7 @@ const Contact = () => {
                   <Button
                     type="submit"
                     size="lg"
-                    disabled={sending || !captchaToken}
+                    disabled={sending}
                     className="w-full bg-orange-500 hover:bg-orange-600 text-white rounded-xl py-6 text-sm font-semibold disabled:opacity-50"
                   >
                     <Send className="w-4 h-4 mr-2" />
@@ -245,6 +228,16 @@ const Contact = () => {
 
                   <p className="text-xs text-center text-gray-300">
                     Vi svarar inom 24 timmar. Dina uppgifter behandlas konfidentiellt.
+                    <br />
+                    Skyddad av reCAPTCHA – Googles{" "}
+                    <a href="https://policies.google.com/privacy" className="underline hover:text-gray-500" target="_blank" rel="noreferrer">
+                      Integritetspolicy
+                    </a>{" "}
+                    och{" "}
+                    <a href="https://policies.google.com/terms" className="underline hover:text-gray-500" target="_blank" rel="noreferrer">
+                      Användarvillkor
+                    </a>{" "}
+                    gäller.
                   </p>
                 </form>
               )}

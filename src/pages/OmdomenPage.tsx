@@ -1,6 +1,7 @@
 import Header from "@/components/roof/Header";
 import Footer from "@/components/roof/Footer";
 import Testimonials from "@/components/roof/Testimonials";
+import Tv4Section from "@/components/roof/Tv4Section";
 import { Star, StarHalf } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -41,6 +42,8 @@ const OmdomenPage = () => {
       </section>
 
       <Testimonials />
+
+      <Tv4Section />
 
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 text-center">
