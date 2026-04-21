@@ -1,0 +1,13 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /admin-login
+Disallow: /dashboard
+Disallow: /login
+Disallow: /clients
+Disallow: /reports
+Disallow: /settings
+Disallow: /integrations
+Disallow: /seo-tools
+
+Sitemap: https://h2otaktvatt.se/sitemap.xml
