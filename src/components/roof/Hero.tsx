@@ -1,8 +1,20 @@
+import { useEffect, useState } from "react";
 import { ArrowRight, Phone, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
+const ROTATING_WORDS = ["taktvätt", "takmålning", "takbehandlingar"];
+
 const Hero = () => {
+  const [wordIndex, setWordIndex] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(() => {
+      setWordIndex((i) => (i + 1) % ROTATING_WORDS.length);
+    }, 2500);
+    return () => clearInterval(id);
+  }, []);
+
   return (
     <section
       id="hem"
@@ -138,9 +150,14 @@ const Hero = () => {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] font-bold text-white leading-[1.1] mb-6 tracking-tight">
-            Professionell taktvätt
+            Vi utför
             <br />
-            <span className="text-gradient-orange">&</span> takmålning
+            <span
+              key={wordIndex}
+              className="inline-block text-gradient-orange animate-word-rotate"
+            >
+              {ROTATING_WORDS[wordIndex]}
+            </span>
           </h1>
 
           <p className="text-base sm:text-lg text-white/70 max-w-md mb-10 leading-relaxed font-normal">

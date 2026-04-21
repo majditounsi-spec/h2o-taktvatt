@@ -112,6 +112,12 @@ export default {
           "0%": { transform: "scale(0.9)", opacity: "0.6" },
           "100%": { transform: "scale(1.4)", opacity: "0" },
         },
+        "word-rotate": {
+          "0%": { transform: "translateY(100%)", opacity: "0" },
+          "15%": { transform: "translateY(0)", opacity: "1" },
+          "85%": { transform: "translateY(0)", opacity: "1" },
+          "100%": { transform: "translateY(-100%)", opacity: "0" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -123,6 +129,7 @@ export default {
         ripple: "ripple 4s ease-out infinite",
         "ripple-delayed": "ripple 4s ease-out infinite 1.3s",
         "ripple-more-delayed": "ripple 4s ease-out infinite 2.6s",
+        "word-rotate": "word-rotate 2.5s ease-in-out",
       },
     },
   },
