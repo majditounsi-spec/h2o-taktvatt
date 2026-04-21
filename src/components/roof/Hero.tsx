@@ -150,11 +150,10 @@ const Hero = () => {
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[4.2rem] font-bold text-white leading-[1.1] mb-6 tracking-tight">
-            Vi utför
-            <br />
+            Vi utför{" "}
             <span
               key={wordIndex}
-              className="inline-block text-gradient-orange animate-word-rotate"
+              className="inline-block text-gradient-orange animate-word-rotate align-baseline"
             >
               {ROTATING_WORDS[wordIndex]}
             </span>
