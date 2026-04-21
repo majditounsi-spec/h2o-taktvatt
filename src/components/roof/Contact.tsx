@@ -55,7 +55,6 @@ const Contact = () => {
       address: (data.get("address") as string) || null,
       service: (data.get("service") as string) || null,
       message: (data.get("message") as string) || null,
-      captcha_token: captchaToken,
     };
 
     try {
@@ -71,11 +70,16 @@ const Contact = () => {
         body: netlifyBody.toString(),
       });
 
-      // 2. Also save to Supabase (backup / DB record)
-      const { error: dbError } = await supabase.from("inquiries").insert(inquiry);
+      // 2. Verify reCAPTCHA server-side and save to Supabase via Edge Function
+      const { data: verifyRes, error: fnError } = await supabase.functions.invoke(
+        "verify-recaptcha",
+        { body: { token: captchaToken, inquiry } },
+      );
 
-      if (dbError && !netlifyRes.ok) {
-        console.error("Submit failed:", { netlifyRes, dbError });
+      const verifyOk = !fnError && (verifyRes as { ok?: boolean } | null)?.ok;
+
+      if (!verifyOk && !netlifyRes.ok) {
+        console.error("Submit failed:", { netlifyRes, fnError, verifyRes });
         setError("Något gick fel. Ring oss istället på 079-055 51 30.");
       } else {
         setSent(true);
