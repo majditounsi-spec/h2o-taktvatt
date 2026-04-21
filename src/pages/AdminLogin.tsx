@@ -3,6 +3,7 @@ import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useNavigate } from "react-router-dom";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 import Logo from "@/components/roof/Logo";
 import { Lock, Mail, AlertCircle } from "lucide-react";
 
@@ -15,6 +16,7 @@ const AdminLogin = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   useEffect(() => {
     // Auto-redirect if already logged in (real or demo)
@@ -30,6 +32,14 @@ const AdminLogin = () => {
     e.preventDefault();
     setLoading(true);
     setError("");
+
+    if (!executeRecaptcha) {
+      setError("Säkerhetsverifieringen är inte redo än. Försök igen om en stund.");
+      setLoading(false);
+      return;
+    }
+
+    await executeRecaptcha("admin_login");
 
     // Demo login
     if (email === DEMO_EMAIL && password === DEMO_PASS) {
@@ -121,6 +131,18 @@ const AdminLogin = () => {
             >
               {loading ? "Loggar in..." : "Logga in"}
             </Button>
+
+            <p className="text-[10px] text-center text-gray-300 leading-relaxed">
+              Skyddad av reCAPTCHA – Googles{" "}
+              <a href="https://policies.google.com/privacy" className="underline hover:text-gray-500" target="_blank" rel="noreferrer">
+                Integritetspolicy
+              </a>{" "}
+              och{" "}
+              <a href="https://policies.google.com/terms" className="underline hover:text-gray-500" target="_blank" rel="noreferrer">
+                Användarvillkor
+              </a>{" "}
+              gäller.
+            </p>
           </form>
         </div>
 

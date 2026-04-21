@@ -6,6 +6,7 @@ import { Label } from "@/components/ui/label";
 import { Checkbox } from "@/components/ui/checkbox";
 import { motion } from "framer-motion";
 import { BarChart3, Eye, EyeOff } from "lucide-react";
+import { useGoogleReCaptcha } from "react-google-recaptcha-v3";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -13,9 +14,13 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [rememberMe, setRememberMe] = useState(false);
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (executeRecaptcha) {
+      await executeRecaptcha("login");
+    }
     navigate("/dashboard");
   };
 
@@ -130,6 +135,18 @@ const Login = () => {
             <Button type="submit" className="w-full h-11 font-semibold">
               Logga in
             </Button>
+
+            <p className="text-[11px] text-center text-muted-foreground leading-relaxed">
+              Skyddad av reCAPTCHA – Googles{" "}
+              <a href="https://policies.google.com/privacy" className="underline hover:text-foreground" target="_blank" rel="noreferrer">
+                Integritetspolicy
+              </a>{" "}
+              och{" "}
+              <a href="https://policies.google.com/terms" className="underline hover:text-foreground" target="_blank" rel="noreferrer">
+                Användarvillkor
+              </a>{" "}
+              gäller.
+            </p>
           </form>
 
           <p className="text-center text-sm text-muted-foreground mt-8">
