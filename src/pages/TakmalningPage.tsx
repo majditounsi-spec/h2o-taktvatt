@@ -90,7 +90,7 @@ const TakmalningPage = () => {
                   <p className="text-sm text-gray-500">Garanti på färg</p>
                 </div>
                 <div className="bg-blue-50 rounded-xl p-5 text-center">
-                  <p className="text-2xl font-bold text-gray-900">2–4 dagar</p>
+                  <p className="text-2xl font-bold text-gray-900">1–2 dagar</p>
                   <p className="text-sm text-gray-500">Genomförande</p>
                 </div>
               </div>
