@@ -13,9 +13,9 @@ const Tv4Section = () => {
             <div className="inline-flex items-center gap-3 mb-7">
               <span className="text-xs font-semibold text-gray-400 uppercase tracking-widest">Som sett på</span>
               {/* TV4 logotype */}
-              <svg viewBox="0 0 80 32" className="h-8 w-auto" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="80" height="32" rx="4" fill="#1560BD"/>
-                <text x="8" y="23" fontFamily="Arial Black, Arial" fontWeight="900" fontSize="18" fill="white" letterSpacing="1">TV4</text>
+              <svg viewBox="0 0 100 100" className="h-10 w-10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50" fill="#E41C24"/>
+                <text x="50" y="65" fontFamily="Arial Black, Arial" fontWeight="900" fontSize="60" fill="white" textAnchor="middle">4</text>
               </svg>
             </div>
 
@@ -55,9 +55,9 @@ const Tv4Section = () => {
 
             {/* TV4 floating badge */}
             <div className="absolute -bottom-5 -left-5 bg-white rounded-2xl shadow-xl border border-gray-100 px-5 py-4 flex items-center gap-3">
-              <svg viewBox="0 0 80 32" className="h-7 w-auto shrink-0" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="80" height="32" rx="4" fill="#1560BD"/>
-                <text x="8" y="23" fontFamily="Arial Black, Arial" fontWeight="900" fontSize="18" fill="white" letterSpacing="1">TV4</text>
+              <svg viewBox="0 0 100 100" className="h-9 w-9 shrink-0" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="50" cy="50" r="50" fill="#E41C24"/>
+                <text x="50" y="65" fontFamily="Arial Black, Arial" fontWeight="900" fontSize="60" fill="white" textAnchor="middle">4</text>
               </svg>
               <div>
                 <p className="text-sm font-bold text-gray-900">Carina Bergs hus</p>
