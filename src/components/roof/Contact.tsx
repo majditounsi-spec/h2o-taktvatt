@@ -62,7 +62,6 @@ const Contact = () => {
       const netlifyBody = new URLSearchParams();
       netlifyBody.append("form-name", "offertforfragan");
       data.forEach((value, key) => netlifyBody.append(key, value as string));
-      netlifyBody.append("g-recaptcha-response", captchaToken);
 
       const netlifyRes = await fetch("/", {
         method: "POST",
@@ -162,7 +161,6 @@ const Contact = () => {
                   name="offertforfragan"
                   method="POST"
                   data-netlify="true"
-                  data-netlify-recaptcha="true"
                   netlify-honeypot="bot-field"
                   className="space-y-4"
                 >
